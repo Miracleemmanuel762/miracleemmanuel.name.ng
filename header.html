@@ -1,0 +1,191 @@
+<head><style>/* --- GlobalMedia Elite Deep Purple Master Header Layout --- */
+:root {
+    --bg-deep-purple: #090514;      /* Sleek dark luxury violet background */
+    --accent-lavender: #9d4edf;     /* High-tech purple glow */
+    --accent-gold: #d4af37;         /* Elite business conversion color */
+    --text-white: #ffffff;
+    --text-muted: #b3a9c9;
+}
+
+.gm-premium-header {
+    width: 100%;
+    background: var(--bg-deep-purple);
+    border-bottom: 1px solid rgba(157, 78, 223, 0.2); /* Deep purple neon boundary border */
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.gm-header-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Brand Identity Block */
+.gm-brand-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.gm-avatar-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-lavender);
+    box-shadow: 0 0 10px rgba(157, 78, 223, 0.3);
+    overflow: hidden;
+}
+
+.gm-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gm-brand-name {
+    color: var(--text-white);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.3px;
+}
+
+/* Public Navigation Menu Layout */
+.gm-public-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.gm-nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.gm-nav-link:hover {
+    color: var(--accent-lavender);
+}
+
+.gm-highlight-link {
+    color: #e2d4f0;
+    background: rgba(157, 78, 223, 0.15);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(157, 78, 223, 0.3);
+}
+
+.gm-highlight-link:hover {
+    color: var(--text-white);
+    background: rgba(157, 78, 223, 0.3);
+}
+
+/* Authenticated Dynamic Social Ecosystem Layer */
+.gm-auth-ecosystem {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 6px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.gm-icon-link {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.gm-icon-link:hover {
+    color: var(--accent-lavender);
+    transform: translateY(-1px);
+}
+
+/* Hiding state wrapper logic */
+.hidden-auth {
+    display: none !important;
+}
+
+/* Premium Gold Action Trigger Button */
+.gm-btn-gold {
+    background: var(--accent-gold);
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 10px 22px;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+    transition: all 0.2s ease;
+}
+
+.gm-btn-gold:hover {
+    background: #f1c40f;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+}
+
+/* Mobile Responsiveness Framework Breakpoints */
+@media (max-width: 900px) {
+    .gm-public-nav {
+        display: none; /* Collapses text menu paths cleanly on mobile */
+    }
+}</style></head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<header class="gm-premium-header">
+    <div class="gm-header-container">
+        
+        <a href="index.html" class="gm-brand-block">
+            <div class="gm-avatar-wrapper">
+                <img src="https://i.postimg.cc/mD363L0P/Screenshot-20260619-152513.png" alt="Miracle Emmanuel" class="gm-avatar-img">
+            </div>
+            <span class="gm-brand-name">Miracle Emmanuel</span>
+        </a>
+
+        <nav class="gm-public-nav">
+            <a href="about.html" class="gm-nav-link">About</a>
+            <a href="web.html" class="gm-nav-link gm-highlight-link"><i class="fa-solid fa-graduation-cap"></i> Learn Web Dev ($10)</a>
+            <a href="https://wa.me/2347044382288" target="_blank" class="gm-nav-link"><i class="fa-brands fa-whatsapp"></i> Contact</a>
+        </nav>
+
+        <div id="gmAuthEcosystem" class="gm-auth-ecosystem hidden-auth">
+            <a href="index.html" class="gm-icon-link" title="Home"><i class="fa-solid fa-house"></i></a>
+            <a href="messages.html" class="gm-icon-link" title="Messages"><i class="fa-solid fa-comment-dots"></i></a>
+            <a href="notifications.html" class="gm-icon-link" title="Notifications"><i class="fa-solid fa-bell"></i></a>
+            <a href="profile.html" class="gm-icon-link" title="Profile"><i class="fa-solid fa-user-gear"></i></a>
+            <a href="menu.html" class="gm-icon-link" title="Menu"><i class="fa-solid fa-bars"></i></a>
+        </div>
+
+        <div class="gm-header-action-zone">
+            <a href="https://global-media-development.netlify.app/order.html" class="gm-btn-gold">Order Website</a>
+        </div>
+
+    </div>
+</header>
+
+<script>
+    // TECHNICAL LAYER: Verification Script
+    // Set this variable to 'true' to simulate a logged-in user, or 'false' for a regular visitor.
+    let isUserLoggedIn = true; 
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const authEcosystem = document.getElementById("gmAuthEcosystem");
+        if (isUserLoggedIn) {
+            authEcosystem.classList.remove("hidden-auth");
+        } else {
+            authEcosystem.classList.add("hidden-auth");
+        }
+    });
+  </script>
