@@ -10,7 +10,6 @@
         :root {
             --bg-deep-obsidian: #06030d;
             --bg-card: #0e091f;
-            --bg-member-panel: #11092c;
             --accent-purple: #9d4edf;
             --accent-gold: #d4af37;
             --text-white: #ffffff;
@@ -28,7 +27,7 @@
 
         /* --- Hero Section --- */
         .gm-hero {
-            padding: 100px 24px 60px 24px;
+            padding: 100px 24px;
             text-align: center;
             background: radial-gradient(circle at top, rgba(157, 78, 223, 0.15), transparent 60%);
         }
@@ -107,98 +106,25 @@
             transform: translateY(-2px);
         }
 
-        /* --- PREMIUM MEMBER COMMAND CENTER --- */
+        /* --- Section Styling --- */
         .gm-section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 24px;
+            padding: 80px 24px;
         }
 
-        .member-zone {
-            background: linear-gradient(135deg, var(--bg-member-panel) 0%, #080417 100%);
-            border: 2px solid rgba(157, 78, 223, 0.4);
-            border-radius: 12px;
-            padding: 32px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            margin-bottom: 40px;
-        }
-
-        .member-zone-header {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--accent-gold);
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 12px;
-        }
-
-        .member-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-        }
-
-        .member-link-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(157, 78, 223, 0.15);
-            padding: 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--text-white);
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            transition: all 0.2s ease;
-        }
-
-        .member-link-card i {
-            font-size: 1.5rem;
-            color: var(--accent-purple);
-        }
-
-        .member-link-card span {
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        .member-link-card small {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-        }
-
-        .member-link-card:hover {
-            background: rgba(157, 78, 223, 0.12);
-            border-color: var(--accent-gold);
-            transform: translateY(-3px);
-        }
-
-        .mentorship-card {
-            border: 1px dashed var(--accent-gold);
-        }
-        .mentorship-card i {
-            color: var(--accent-gold);
-        }
-
-        .hidden-auth-panel {
-            display: none !important;
-        }
-
-        /* --- Infrastructure Tiers Grid --- */
         .section-title {
             text-align: center;
             font-size: 2rem;
             margin-bottom: 48px;
+            position: relative;
         }
 
         .section-title span {
             color: var(--accent-purple);
         }
 
+        /* --- Architecture Tiers Grid --- */
         .tiers-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -261,16 +187,23 @@
             max-width: 600px;
         }
 
+        /* --- Footer Statement --- */
+        .gm-footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid rgba(157, 78, 223, 0.15);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- Responsive Viewports --- */
         @media (max-width: 768px) {
             .gm-hero h1 { font-size: 2.2rem; }
             .academy-banner { text-align: center; justify-content: center; padding: 32px 20px; }
-            .member-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
-
-    <div id="header-placeholder"></div>
 
     <section class="gm-hero">
         <div class="hero-avatar-frame">
@@ -284,59 +217,10 @@
         </div>
     </section>
 
-    <section id="gmMicropanelZone" class="gm-section hidden-auth-panel">
-        <div class="member-zone">
-            <div class="member-zone-header">
-                <i class="fa-solid fa-square-rss"></i> GlobalMedia Hub Dashboard
-            </div>
-            <div class="member-grid">
-                <a href="acc.html" class="member-link-card">
-                    <i class="fa-solid fa-user-shield"></i>
-                    <span>My Account</span>
-                    <small>Configure portal assets</small>
-                </a>
-                <a href="chatroom.html" class="member-link-card">
-                    <i class="fa-solid fa-comments"></i>
-                    <span>Dev Chatroom</span>
-                    <small>Connect with developers</small>
-                </a>
-                <a href="videos.html" class="member-link-card">
-                    <i class="fa-solid fa-circle-play"></i>
-                    <span>Watch Videos</span>
-                    <small>Stream premium lessons</small>
-                </a>
-                <a href="monetization.html" class="member-link-card">
-                    <i class="fa-solid fa-wallet"></i>
-                    <span>Monetization (₦1k)</span>
-                    <small>Learn active web returns</small>
-                </a>
-                <a href="prompts.html" class="member-link-card">
-                    <i class="fa-solid fa-bolt"></i>
-                    <span>AI Prompts (₦500)</span>
-                    <small>Elite command libraries</small>
-                </a>
-                <a href="tools.html" class="member-link-card">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span>Developer Tools</span>
-                    <small>Execution workspaces</small>
-                </a>
-                <a href="join.html" class="member-link-card">
-                    <i class="fa-solid fa-users-gear"></i>
-                    <span>Join GlobalMedia</span>
-                    <small>Access system deployment</small>
-                </a>
-                <a href="https://wa.me/2347044382288?text=Hello%20Miracle%20Emmanuel,%20I%20want%20to%20book%20for%20your%20premium%20mentorship%20program." target="_blank" class="member-link-card mentorship-card">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <span>Book Mentorship</span>
-                    <small>Direct architectural access</small>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <section class="gm-section">
         <h2 class="section-title">Development <span>Tiers</span></h2>
         <div class="tiers-grid">
+            
             <div class="tier-card">
                 <h3>Core Showcase</h3>
                 <div class="tier-price">₦15,000</div>
@@ -348,6 +232,7 @@
                 </ul>
                 <a href="https://global-media-development.netlify.app/order.html" class="btn-sub" style="display:block; text-align:center;">Select Core</a>
             </div>
+
             <div class="tier-card">
                 <h3>Corporate Hub</h3>
                 <div class="tier-price">₦25,000</div>
@@ -359,6 +244,7 @@
                 </ul>
                 <a href="https://global-media-development.netlify.app/order.html" class="btn-sub" style="display:block; text-align:center;">Select Hub</a>
             </div>
+
             <div class="tier-card">
                 <h3>Enterprise Engine</h3>
                 <div class="tier-price">₦50,000</div>
@@ -370,6 +256,7 @@
                 </ul>
                 <a href="https://global-media-development.netlify.app/order.html" class="btn-prime" style="display:block; text-align:center;">Select Enterprise</a>
             </div>
+
         </div>
     </section>
 
@@ -377,44 +264,16 @@
         <div class="academy-banner">
             <div class="academy-text">
                 <h2>Miracle Emmanuel Academy 🚀</h2>
-                <p>Learn front-end web engineering from the ground up for just $10. Master HTML, and CSS, and advanced cloud deployments straight from your mobile device or PC.</p>
+                <p>Learn full-stack web engineering from the ground up for just $10. Master HTML, CSS, JavaScript, and advanced cloud deployments straight from your mobile device or PC.</p>
             </div>
             <a href="web.html" class="btn-prime">Secure Your Seat</a>
         </div>
     </section>
 
-    <div id="footer-placeholder"></div>
+    <footer class="gm-footer">
+        <p>Although it is God all the way, we are completely relentless in executing absolute technical perfection.</p>
+        <p style="font-size: 0.8rem; margin-top: 16px;">&copy; 2026 Miracle Emmanuel. Driven by the GlobalMedia Team.</p>
+    </footer>
 
-    <script>
-        // Set to true to show the dashboard grid, or false to hide it completely for guests
-        let isUserLoggedIn = true;
-
-        document.addEventListener("DOMContentLoaded", function() {
-            // Check authorization state
-            const memberPanel = document.getElementById("gmMicropanelZone");
-            if (isUserLoggedIn) {
-                memberPanel.classList.remove("hidden-auth-panel");
-            } else {
-                memberPanel.classList.add("hidden-auth-panel");
-            }
-
-            // DYNAMIC COMPONENT ASYNCHRONOUS INJECTION ENGINE
-            // This fetches your external header.html and loads it instantly
-            fetch('header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header-placeholder').innerHTML = data;
-                })
-                .catch(err => console.error('Error rendering header architecture:', err));
-
-            // Ready to hook your future footer.html once built
-            fetch('footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                })
-                .catch(err => console.error('Error rendering footer architecture:', err));
-        });
-    </script>
 </body>
-  </html>
+    </html>
