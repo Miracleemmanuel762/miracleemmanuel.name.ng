@@ -1,147 +1,278 @@
-<head><style>/* --- GlobalMedia Elite Deep Purple Master Header Layout --- */
-:root {    --bg-deep-purple: #090514;      /* Sleek dark luxury violet background */
-    --accent-lavender: #9d4edf;     /* High-tech purple glow */
-    --accent-gold: #d4af37;         /* Elite business conversion color */
-    --text-white: #ffffff;
-    --text-muted: #b3a9c9;
-}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-.gm-premium-header {
-    width: 100%;
-    background: var(--bg-deep-purple);
-    border-bottom: 1px solid rgba(157, 78, 223, 0.2); /* Deep purple neon boundary border */
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.gm-header-container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 12px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Brand Identity Block */
-.gm-brand-block {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-}
-
-.gm-avatar-wrapper {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid var(--accent-lavender);
-    box-shadow: 0 0 10px rgba(157, 78, 223, 0.3);
-    overflow: hidden;
-}
-
-.gm-avatar-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.gm-brand-name {
-    color: var(--text-white);
-    font-weight: 700;
-    font-size: 1.15rem;
-    letter-spacing: -0.3px;
-}
-
-/* Public Navigation Menu Layout */
-.gm-public-nav {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.gm-nav-link {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.gm-nav-link:hover {
-    color: var(--accent-lavender);
-}
-
-.gm-highlight-link {
-    color: #e2d4f0;
-    background: rgba(157, 78, 223, 0.15);
-    padding: 6px 12px;
-    border-radius: 6px;
-    border: 1px solid rgba(157, 78, 223, 0.3);
-}
-
-.gm-highlight-link:hover {
-    color: var(--text-white);
-    background: rgba(157, 78, 223, 0.3);
-}
-
-/* Authenticated Dynamic Social Ecosystem Layer */
-.gm-auth-ecosystem {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 6px 16px;
-    border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.gm-icon-link {
-    color: var(--text-muted);
-    font-size: 1.15rem;
-    text-decoration: none;
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.gm-icon-link:hover {
-    color: var(--accent-lavender);
-    transform: translateY(-1px);
-}
-
-/* Hiding state wrapper logic */
-.hidden-auth {
-    display: none !important;
-}
-
-/* Premium Gold Action Trigger Button */
-.gm-btn-gold {
-    background: var(--accent-gold);
-    color: #000000;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    padding: 10px 22px;
-    border-radius: 6px;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
-    transition: all 0.2s ease;
-}
-
-.gm-btn-gold:hover {
-    background: #f1c40f;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
-}
-
-/* Mobile Responsiveness Framework Breakpoints */
-@media (max-width: 900px) {
-    .gm-public-nav {
-        display: none; /* Collapses text menu paths cleanly on mobile */
+<style>
+    /* --- GlobalMedia Elite Deep Purple Master Header Layout --- */
+    :root {
+        --bg-deep-purple: #090514;      /* Sleek dark luxury violet background */
+        --accent-lavender: #9d4edf;     /* High-tech purple glow */
+        --accent-gold: #d4af37;         /* Elite business conversion color */
+        --text-white: #ffffff;
+        --text-muted: #b3a9c9;
     }
-}</style></head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    .gm-premium-header {
+        width: 100%;
+        background: var(--bg-deep-purple);
+        border-bottom: 1px solid rgba(157, 78, 223, 0.2); /* Deep purple neon boundary border */
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .gm-header-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 12px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Brand Identity Block */
+    .gm-brand-block {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+    }
+
+    .gm-avatar-wrapper {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid var(--accent-lavender);
+        box-shadow: 0 0 10px rgba(157, 78, 223, 0.3);
+        overflow: hidden;
+    }
+
+    .gm-avatar-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .gm-brand-name {
+        color: var(--text-white);
+        font-weight: 700;
+        font-size: 1.15rem;
+        letter-spacing: -0.3px;
+    }
+
+    /* Public Navigation Menu Layout */
+    .gm-public-nav {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .gm-nav-link {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+
+    .gm-nav-link:hover {
+        color: var(--accent-lavender);
+    }
+
+    .gm-highlight-link {
+        color: #e2d4f0;
+        background: rgba(157, 78, 223, 0.15);
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 1px solid rgba(157, 78, 223, 0.3);
+    }
+
+    .gm-highlight-link:hover {
+        color: var(--text-white);
+        background: rgba(157, 78, 223, 0.3);
+    }
+
+    /* Authenticated Dynamic Social Ecosystem Layer */
+    .gm-auth-ecosystem {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 6px 16px;
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        position: relative; /* Context parent anchoring for dropdown position */
+    }
+
+    .gm-icon-link {
+        color: var(--text-muted);
+        font-size: 1.15rem;
+        text-decoration: none;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .gm-icon-link:hover {
+        color: var(--accent-lavender);
+        transform: translateY(-1px);
+    }
+
+    /* Dropdown Toggle Button Styling */
+    .gm-icon-btn {
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        font-size: 1.15rem;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        transition: color 0.2s ease;
+    }
+
+    .gm-icon-btn:hover {
+        color: var(--accent-lavender);
+    }
+
+    /* PREMIUM MEMBER CONTROL CENTER DROPDOWN PANEL */
+    .gm-member-dropdown {
+        position: absolute;
+        top: 45px;
+        right: 0;
+        width: 290px;
+        background: #0f0a24; /* Solid luxury dark violet background layer */
+        border: 1px solid rgba(157, 78, 223, 0.3);
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        padding: 12px;
+        display: none; /* Keep hidden till activated via JS */
+        z-index: 10000;
+    }
+
+    .gm-member-dropdown.active-drop {
+        display: block;
+        animation: dropFade 0.2s ease-out;
+    }
+
+    .dropdown-header {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--accent-gold);
+        font-weight: 700;
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .dropdown-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    /* Individual Dropdown Navigation Elements */
+    .drop-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }
+
+    .drop-item i {
+        width: 16px;
+        font-size: 0.95rem;
+        color: var(--accent-purple);
+    }
+
+    .drop-item:hover {
+        background: rgba(157, 78, 223, 0.15);
+        color: var(--text-white);
+    }
+
+    /* Premium Attention Marker for Mentorship booking path */
+    .contract-premium {
+        border: 1px dashed rgba(212, 175, 55, 0.3);
+        margin-top: 4px;
+    }
+
+    .contract-premium i {
+        color: var(--accent-gold) !important;
+    }
+
+    .contract-premium:hover {
+        background: rgba(212, 175, 55, 0.1) !important;
+        border-color: var(--accent-gold);
+    }
+
+    /* --- Sign In & CTA Action styling --- */
+    .gm-header-action-zone {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .gm-btn-outline {
+        background: transparent;
+        color: var(--text-muted);
+        border: 1px solid rgba(157, 78, 223, 0.4);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 9px 18px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+    }
+
+    .gm-btn-outline:hover {
+        color: var(--text-white);
+        background: rgba(157, 78, 223, 0.15);
+        border-color: var(--accent-purple);
+    }
+
+    .gm-btn-gold {
+        background: var(--accent-gold);
+        color: #000000;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.9rem;
+        padding: 10px 22px;
+        border-radius: 6px;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        transition: all 0.2s ease;
+    }
+
+    .gm-btn-gold:hover {
+        background: #f1c40f;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+    }
+
+    /* Master State Hiding Rule */
+    .hidden-state {
+        display: none !important;
+    }
+
+    /* Simple animation keyframe entry speed */
+    @keyframes dropFade {
+        from { opacity: 0; transform: translateY(-5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile Responsiveness Framework Breakpoints */
+    @media (max-width: 900px) {
+        .gm-public-nav {
+            display: none; /* Collapses text menu paths cleanly on mobile */
+        }
+    }
+</style>
 
 <header class="gm-premium-header">
     <div class="gm-header-container">
@@ -159,15 +290,33 @@
             <a href="https://wa.me/2347044382288" target="_blank" class="gm-nav-link"><i class="fa-brands fa-whatsapp"></i> Contact</a>
         </nav>
 
-        <div id="gmAuthEcosystem" class="gm-auth-ecosystem hidden-auth">
+        <div id="gmAuthEcosystem" class="gm-auth-ecosystem hidden-state">
             <a href="index.html" class="gm-icon-link" title="Home"><i class="fa-solid fa-house"></i></a>
             <a href="messages.html" class="gm-icon-link" title="Messages"><i class="fa-solid fa-comment-dots"></i></a>
             <a href="notifications.html" class="gm-icon-link" title="Notifications"><i class="fa-solid fa-bell"></i></a>
-            <a href="profile.html" class="gm-icon-link" title="Profile"><i class="fa-solid fa-user-gear"></i></a>
-            <a href="menu.html" class="gm-icon-link" title="Menu"><i class="fa-solid fa-bars"></i></a>
+            
+            <button id="gmMenuTrigger" class="gm-icon-btn" title="Control Center"><i class="fa-solid fa-bars"></i></button>
+            
+            <div id="gmDropdownDashboard" class="gm-member-dropdown">
+                <div class="dropdown-header">Member Ecosystem</div>
+                <div class="dropdown-grid">
+                    <a href="acc.html" class="drop-item"><i class="fa-solid fa-user-shield"></i> My Account</a>
+                    <a href="chatroom.html" class="drop-item"><i class="fa-solid fa-comments"></i> Dev Chatroom</a>
+                    <a href="videos.html" class="drop-item"><i class="fa-solid fa-circle-play"></i> Watch Videos</a>
+                    <a href="monetization.html" class="drop-item"><i class="fa-solid fa-wallet"></i> Web Monetization (₦1k)</a>
+                    <a href="prompts.html" class="drop-item"><i class="fa-solid fa-bolt"></i> AI Prompts (₦500)</a>
+                    <a href="tools.html" class="drop-item"><i class="fa-solid fa-screwdriver-wrench"></i> Developer Tools</a>
+                    <a href="join.html" class="drop-item"><i class="fa-solid fa-users-gear"></i> Join GlobalMedia</a>
+                    <a href="https://wa.me/2347044382288?text=Hello%20Miracle%20Emmanuel,%20I%20want%20to%20book%20for%20your%20premium%20mentorship%20program." target="_blank" class="drop-item contract-premium">
+                        <i class="fa-brands fa-whatsapp"></i> Book Mentorship
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="gm-header-action-zone">
+            <a href="login.html" id="gmSignInBtn" class="gm-btn-outline hidden-state"><i class="fa-solid fa-right-to-bracket"></i> Sign In</a>
+            
             <a href="https://global-media-development.netlify.app/order.html" class="gm-btn-gold">Order Website</a>
         </div>
 
@@ -175,16 +324,39 @@
 </header>
 
 <script>
-    // TECHNICAL LAYER: Verification Script
-    // Set this variable to 'true' to simulate a logged-in user, or 'false' for a regular visitor.
-    let isUserLoggedIn = true; 
+    // TECHNICAL LOGIC LAYER: Authentication toggle
+    // Set to 'false' to simulate guest mode (Sign In shows, App icons hide)
+    // Set to 'true' to simulate logged-in mode (Sign In hides, App icons show)
+    let isUserLoggedIn = false; 
 
     document.addEventListener("DOMContentLoaded", function() {
         const authEcosystem = document.getElementById("gmAuthEcosystem");
+        const signInBtn = document.getElementById("gmSignInBtn");
+        const menuTrigger = document.getElementById("gmMenuTrigger");
+        const dropdownDashboard = document.getElementById("gmDropdownDashboard");
+
+        // Conditional Visibility Handler
         if (isUserLoggedIn) {
-            authEcosystem.classList.remove("hidden-auth");
+            if (authEcosystem) authEcosystem.classList.remove("hidden-state");
+            if (signInBtn) signInBtn.classList.add("hidden-state");
         } else {
-            authEcosystem.classList.add("hidden-auth");
+            if (authEcosystem) authEcosystem.classList.add("hidden-state");
+            if (signInBtn) signInBtn.classList.remove("hidden-state");
         }
+
+        // Dropdown toggle logic
+        if (menuTrigger) {
+            menuTrigger.addEventListener("click", function(e) {
+                e.stopPropagation();
+                if (dropdownDashboard) dropdownDashboard.classList.toggle("active-drop");
+            });
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function() {
+            if (dropdownDashboard) {
+                dropdownDashboard.classList.remove("active-drop");
+            }
+        });
     });
-  </script>
+    </script>
