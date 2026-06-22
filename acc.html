@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GM Pay Dashboard - Wallet Account</title>
+    <style>
+        :root {
+            --purple: #4A148C;
+            --lavender: #E1BEE7;
+            --gold: #D4AF37;
+            --dark: #121212;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--dark);
+            color: #fff;
+            padding: 20px;
+        }
+        .dashboard-card {
+            background: linear-gradient(135deg, var(--purple), #310c62);
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 500px;
+            margin: 20px auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            border: 1px solid var(--gold);
+        }
+        .balance-title {
+            font-size: 14px;
+            color: var(--lavender);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .balance-amount {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            margin: 10px 0 20px 0;
+        }
+        .deposit-section {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 4px solid var(--gold);
+        }
+        .deposit-section h4 {
+            margin: 0 0 10px 0;
+            color: var(--gold);
+        }
+        .bank-details {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .bank-details span {
+            font-weight: bold;
+            color: #fff;
+        }
+        .logout-btn {
+            display: block;
+            width: 100px;
+            margin: 30px auto;
+            padding: 10px;
+            background: transparent;
+            color: #ff5252;
+            border: 1px solid #ff5252;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-card">
+    <div class="balance-title">Available Balance</div>
+    <div class="balance-amount">₦<span id="wallet-balance">0.00</span></div>
+    
+    <div class="deposit-section">
+        <h4>👇 Fund Your Wallet Via Bank Transfer</h4>
+        <div class="bank-details">
+            <p>Bank Name: <span id="bank-name">Loading...</span></p>
+            <p>Account Number: <span id="account-number">Loading...</span></p>
+            <p>Account Name: <span id="account-name">Loading...</span></p>
+        </div>
+    </div>
+</div>
+
+<button class="logout-btn" onclick="logout()">Logout</button>
+
+<script>
+    // YOUR LIVE RENDER SERVER URL
+    const backendUrl = "https://your-unique-app-name.onrender.com";
+
+    async function loadDashboardData() {
+        const uid = localStorage.getItem('gm_user_uid');
+        if (!uid) {
+            window.location.href = "login.html";
+            return;
+        }
+
+        try {
+            const response = await fetch(`${backendUrl}/api/user/${uid}`);
+            const data = await response.json();
+
+            if (response.ok) {
+                // Update Balance
+                document.getElementById('wallet-balance').innerText = parseFloat(data.balance).toFixed(2);
+                
+                // Update Assigned Bank Transfer Details
+                if(data.virtualAccount) {
+                    document.getElementById('bank-name').innerText = data.virtualAccount.bankName;
+                    document.getElementById('account-number').innerText = data.virtualAccount.accountNumber;
+                    document.getElementById('account-name').innerText = data.virtualAccount.accountName;
+                } else {
+                    document.getElementById('account-number').innerText = "Processing Account...";
+                }
+            } else {
+                alert("Session expired. Please re-login.");
+                logout();
+            }
+        } catch (err) {
+            console.error(err);
+            document.getElementById('account-number').innerText = "Connection Error";
+        }
+    }
+
+    function logout() {
+        localStorage.clear();
+        window.location.href = "login.html";
+    }
+
+    // Load data instantly when screen opens
+    window.onload = loadDashboardData;
+</script>
+</body>
+  </html>
