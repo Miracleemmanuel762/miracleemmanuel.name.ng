@@ -3,321 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlobalMedia Hub | Secure Portal Access</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>GlobalMedia - Access Portal</title>
     <style>
-        /* --- Master Deep Purple Theme Palette --- */
         :root {
-            --bg-deep-obsidian: #06030d;
-            --bg-card: #0e091f;
-            --accent-purple: #9d4edf;
-            --accent-gold: #d4af37;
-            --text-white: #ffffff;
-            --text-muted: #b3a9c9;
-            --error-red: #e74c3c;
+            --purple: #4A148C;
+            --lavender: #E1BEE7;
+            --gold: #D4AF37;
+            --dark: #121212;
         }
-
         body {
             margin: 0;
             padding: 0;
-            background-color: var(--bg-deep-obsidian);
-            color: var(--text-white);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark);
+            color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: radial-gradient(circle at center, rgba(157, 78, 223, 0.1), transparent 70%);
         }
-
-        /* --- Gateway Card Component --- */
         .auth-container {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(74, 20, 140, 0.3);
+            border: 1px solid var(--purple);
             width: 100%;
             max-width: 400px;
-            padding: 16px;
             box-sizing: border-box;
         }
-
-        .auth-card {
-            background: var(--bg-card);
-            border: 2px solid rgba(157, 78, 223, 0.3);
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-            position: relative;
-        }
-
-        .auth-logo {
+        h2 {
             text-align: center;
+            color: var(--gold);
             margin-bottom: 24px;
         }
-
-        .auth-logo i {
-            font-size: 2.5rem;
-            color: var(--accent-gold);
-            margin-bottom: 12px;
-        }
-
-        .auth-logo h2 {
-            margin: 0;
-            font-size: 1.5rem;
-            letter-spacing: -0.5px;
-        }
-
-        .auth-logo p {
-            margin: 6px 0 0 0;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* --- Elegant Input Fields --- */
-        .form-group {
+        .input-group {
             margin-bottom: 20px;
-            position: relative;
         }
-
-        .form-group label {
+        .input-group label {
             display: block;
-            font-size: 0.85rem;
-            color: var(--text-muted);
             margin-bottom: 8px;
-            font-weight: 600;
+            color: var(--lavender);
+            font-size: 14px;
         }
-
-        .input-wrapper {
-            position: relative;
-        }
-
-        .input-wrapper i {
-            position: absolute;
-            left: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--accent-purple);
-        }
-
-        .form-control {
+        .input-group input {
             width: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(157, 78, 223, 0.2);
-            padding: 12px 16px 12px 40px;
-            box-sizing: border-box;
-            border-radius: 8px;
-            color: var(--text-white);
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
-        }
-
-        /* --- Interactive Action Control Switches --- */
-        .btn-submit {
-            width: 100%;
-            background: var(--accent-gold);
-            color: #000000;
-            border: none;
-            padding: 14px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            margin-top: 10px;
-        }
-
-        .btn-submit:hover {
-            background: #f1c40f;
-            transform: translateY(-1px);
-        }
-
-        .auth-toggle-msg {
-            text-align: center;
-            margin-top: 24px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .auth-toggle-msg span {
-            color: var(--accent-purple);
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: underline;
-        }
-
-        .error-banner {
-            background: rgba(231, 76, 60, 0.1);
-            border: 1px solid var(--error-red);
-            color: #ff7675;
-            padding: 10px;
+            padding: 12px;
+            background: #2b2b2b;
+            border: 1px solid #444;
             border-radius: 6px;
-            font-size: 0.85rem;
-            margin-bottom: 20px;
-            display: none;
-            text-align: center;
+            color: #fff;
+            box-sizing: border-box;
+            font-size: 16px;
         }
-
-        /* Utility state hide rule */
-        .hidden-field {
-            display: none;
+        .input-group input:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--purple);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid var(--gold);
+        }
+        .btn:hover {
+            background: #6a1b9a;
+            transform: translateY(-2px);
+        }
+        .switch-mode {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #aaa;
+        }
+        .switch-mode span {
+            color: var(--gold);
+            cursor: pointer;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <div class="auth-container">
-        
-        <div id="errorBanner" class="error-banner"></div>
-
-        <div class="auth-card">
-            <div class="auth-logo">
-                <i class="fa-solid fa-shield-halved"></i>
-                <h2 id="authTitle">Sign In</h2>
-                <p id="authSubtitle">Access your GlobalMedia core tools</p>
-            </div>
-
-            <form id="authForm">
-                
-                <div id="nameFieldGroup" class="form-group hidden-field">
-                    <label for="regName">Full Name</label>
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" id="regName" class="form-control" placeholder="Enter full name">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="authEmail">Email Address</label>
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input type="email" id="authEmail" class="form-control" placeholder="developer@domain.com" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="authPassword">Password</label>
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-lock"></i>
-                        <input type="password" id="authPassword" class="form-control" placeholder="••••••••" required>
-                    </div>
-                </div>
-
-                <button type="submit" id="submitBtn" class="btn-submit">Sign In to Dashboard</button>
-            </form>
-
-            <div class="auth-toggle-msg">
-                <span id="toggleModeLink">Don't have an account? Create one</span>
-            </div>
+<div class="auth-container">
+    <h2 id="form-title">Login to GM Pay</h2>
+    <form id="auth-form">
+        <div class="input-group" id="name-group" style="display: none;">
+            <label for="fullName">Full Name (As it appears on Bank Account)</label>
+            <input type="text" id="fullName" placeholder="Miracle Emmanuel">
         </div>
+        <div class="input-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required placeholder="example@gmail.com">
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn" id="submit-btn">Login</button>
+    </form>
+    <div class="switch-mode">
+        <p id="toggle-text">Don't have an account? <span onclick="toggleAuthMode()">Sign Up</span></p>
     </div>
+</div>
 
-    <script type="module">
-        // Import Firebase Framework Components
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
-        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+<script>
+    // YOUR LIVE RENDER SERVER URL
+    const backendUrl = "https://your-unique-app-name.onrender.com"; 
+    let isLoginMode = true;
 
-        // Your Exact Verified Cloud Config Keys
-        const firebaseConfig = {
-            apiKey: "AIzaSyAreno2SUZ6QK0LP8rlFUIFF-CAJzvCGv0",
-            authDomain: "miracle-academy-2c4f3.firebaseapp.com",
-            projectId: "miracle-academy-2c4f3",
-            storageBucket: "miracle-academy-2c4f3.firebasestorage.app",
-            messagingSenderId: "222133626495",
-            appId: "1:222133626495:web:d4d8ba60d823e719ae414a"
-        };
+    function toggleAuthMode() {
+        isLoginMode = !isLoginMode;
+        const formTitle = document.getElementById('form-title');
+        const nameGroup = document.getElementById('name-group');
+        const submitBtn = document.getElementById('submit-btn');
+        const toggleText = document.getElementById('toggle-text');
 
-        // Initialize Instances
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
+        if (isLoginMode) {
+            formTitle.innerText = "Login to GM Pay";
+            nameGroup.style.display = "none";
+            submitBtn.innerText = "Login";
+            toggleText.innerHTML = `Don't have an account? <span onclick="toggleAuthMode()">Sign Up</span>`;
+        } else {
+            formTitle.innerText = "Create GM Pay Account";
+            nameGroup.style.display = "block";
+            submitBtn.innerText = "Register Account";
+            toggleText.innerHTML = `Already have an account? <span onclick="toggleAuthMode()">Login</span>`;
+        }
+    }
 
-        // UI State Variables
-        let isLoginMode = true;
+    document.getElementById('auth-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const fullName = document.getElementById('fullName').value;
 
-        const authForm = document.getElementById("authForm");
-        const authTitle = document.getElementById("authTitle");
-        const authSubtitle = document.getElementById("authSubtitle");
-        const nameFieldGroup = document.getElementById("nameFieldGroup");
-        const submitBtn = document.getElementById("submitBtn");
-        const toggleModeLink = document.getElementById("toggleModeLink");
-        const errorBanner = document.getElementById("errorBanner");
+        const endpoint = isLoginMode ? '/api/login' : '/api/register';
+        const payload = isLoginMode ? { email, password } : { email, password, fullName };
 
-        // Toggle Switch Interface View Engine
-        toggleModeLink.addEventListener("click", () => {
-            isLoginMode = !isLoginMode;
-            errorBanner.style.display = "none";
-            
-            if (isLoginMode) {
-                authTitle.innerText = "Sign In";
-                authSubtitle.innerText = "Access your GlobalMedia core tools";
-                nameFieldGroup.classList.add("hidden-field");
-                submitBtn.innerText = "Sign In to Dashboard";
-                toggleModeLink.innerText = "Don't have an account? Create one";
+        try {
+            const response = await fetch(`${backendUrl}${endpoint}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                // Save user payload token session data
+                localStorage.setItem('gm_user_email', data.email);
+                localStorage.setItem('gm_user_uid', data.uid);
+                
+                alert(isLoginMode ? "Login Successful!" : "Registration Successful! Virtual Bank Account Generated.");
+                window.location.href = "acc.html";
             } else {
-                authTitle.innerText = "Create Account";
-                authSubtitle.innerText = "Open a free developer academy wallet portal";
-                nameFieldGroup.classList.remove("hidden-field");
-                submitBtn.innerText = "Register Account";
-                toggleModeLink.innerText = "Already have an account? Sign In";
+                alert("Error: " + data.message);
             }
-        });
-
-        // Form Submit Handler (Processes Auth & Database Cloud Writing)
-        authForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            errorBanner.style.display = "none";
-
-            const email = document.getElementById("authEmail").value;
-            const password = document.getElementById("authPassword").value;
-
-            if (isLoginMode) {
-                // --- USER SIGN IN LOGIC ---
-                signInWithEmailAndPassword(auth, email, password)
-                    .then((userCredential) => {
-                        // Success -> Redirect straight to your Account view
-                        window.location.href = "acc.html";
-                    })
-                    .catch((error) => {
-                        errorBanner.innerText = error.message;
-                        errorBanner.style.display = "block";
-                    });
-            } else {
-                // --- USER REGISTER LOGIC ---
-                const fullName = document.getElementById("regName").value;
-                if (!fullName) {
-                    errorBanner.innerText = "Please fill in your full name.";
-                    errorBanner.style.display = "block";
-                    return;
-                }
-
-                try {
-                    // 1. Create Login Account credentials in Auth Room
-                    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                    const user = userCredential.user;
-
-                    // 2. Instantly construct their Database document matching their unique ID
-                    await setDoc(doc(db, "users", user.uid), {
-                        uid: user.uid,
-                        name: fullName,
-                        email: email,
-                        walletBalance: 0.00,
-                        accountNumber: "9920" + Math.floor(100000 + Math.random() * 900000), // Random Sandbox Account
-                        bankName: "Wema Bank (Test Node)"
-                    });
-
-                    // Success -> Redirect straight to account space
-                    window.location.href = "acc.html";
-
-                } catch (error) {
-                    errorBanner.innerText = error.message;
-                    errorBanner.style.display = "block";
-                }
-            }
-        });
-    </script>
+        } catch (err) {
+            console.error(err);
+            alert("Could not connect to live backend server. Verify Render configuration.");
+        }
+    });
+</script>
 </body>
-  </html>
+    </html>
