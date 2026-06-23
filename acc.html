@@ -92,30 +92,41 @@
 
 <script>
     // YOUR LIVE RENDER SERVER URL
-    const backendUrl = "https://your-unique-app-name.onrender.com";
+    const backendUrl = "https://gmpay.onrender.com";
 
     async function loadDashboardData() {
         const uid = localStorage.getItem('gm_user_uid');
-        if (!uid) {
+        const email = localStorage.getItem('gm_user_email');
+        
+        if (!uid || !email) {
             window.location.href = "login.html";
             return;
         }
 
         try {
-            const response = await fetch(`${backendUrl}/api/user/${uid}`);
+            // We use the secure login endpoint to fetch fresh profile and banking details
+            const response = await fetch(`${backendUrl}/api/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email })
+            });
+            
             const data = await response.json();
 
             if (response.ok) {
-                // Update Balance
-                document.getElementById('wallet-balance').innerText = parseFloat(data.balance).toFixed(2);
+                // Update Balance (Defaults to 0.00 on fresh logins until webhook alerts a deposit)
+                document.getElementById('wallet-balance').innerText = "0.00";
                 
-                // Update Assigned Bank Transfer Details
-                if(data.virtualAccount) {
-                    document.getElementById('bank-name').innerText = data.virtualAccount.bankName;
-                    document.getElementById('account-number').innerText = data.virtualAccount.accountNumber;
-                    document.getElementById('account-name').innerText = data.virtualAccount.accountName;
+                // Update Assigned Bank Transfer Details cleanly
+                if (data.accountNumber && data.accountNumber !== "Not Generated") {
+                    document.getElementById('bank-name').innerText = data.bankName;
+                    document.getElementById('account-number').innerText = data.accountNumber;
+                    
+                    // Pull user's email to show on dashboard as account identifier
+                    document.getElementById('account-name').innerText = data.email.split('@')[0].toUpperCase() + " - GMPAY";
                 } else {
                     document.getElementById('account-number').innerText = "Processing Account...";
+                    document.getElementById('bank-name').innerText = "Pending Allocation";
                 }
             } else {
                 alert("Session expired. Please re-login.");
@@ -124,6 +135,8 @@
         } catch (err) {
             console.error(err);
             document.getElementById('account-number').innerText = "Connection Error";
+            document.getElementById('bank-name').innerText = "Offline";
+            document.getElementById('account-name').innerText = "Offline";
         }
     }
 
@@ -136,4 +149,4 @@
     window.onload = loadDashboardData;
 </script>
 </body>
-  </html>
+    </html>
