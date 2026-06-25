@@ -10,6 +10,7 @@
             --lavender: #E1BEE7;
             --gold: #D4AF37;
             --dark: #121212;
+            --surface: #1e1938;
         }
         body {
             margin: 0;
@@ -20,48 +21,91 @@
         }
         .dashboard-card {
             background: linear-gradient(135deg, var(--purple), #310c62);
-            border-radius: 15px;
+            border-radius: 20px;
             padding: 25px;
             max-width: 500px;
             margin: 20px auto;
             box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-            border: 1px solid var(--gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
         .balance-title {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--lavender);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         .balance-amount {
-            font-size: 36px;
+            font-size: 38px;
             font-weight: bold;
             color: #fff;
-            margin: 10px 0 20px 0;
+            margin: 10px 0 25px 0;
         }
-        .deposit-section {
+        
+        /* 💸 NEW ACTION BUTTONS GRID */
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        .action-btn {
             background: rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 14px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .action-btn:hover {
+            background: var(--gold);
+            color: #000;
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+        .action-btn.withdraw:hover {
+            background: #ff5252;
+            color: #fff;
+            border-color: #ff5252;
+        }
+
+        .deposit-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 20px;
             border-left: 4px solid var(--gold);
+            display: none; /* Hidden by default, toggles open on Deposit click */
+        }
+        .deposit-section.active {
+            display: block;
         }
         .deposit-section h4 {
-            margin: 0 0 10px 0;
+            margin: 0 0 12px 0;
             color: var(--gold);
+            font-size: 15px;
         }
         .bank-details {
-            font-size: 16px;
-            line-height: 1.6;
+            font-size: 15px;
+            line-height: 1.7;
         }
         .bank-details span {
             font-weight: bold;
             color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2px 6px;
+            border-radius: 4px;
         }
         .logout-btn {
             display: block;
             width: 100px;
-            margin: 30px auto;
+            margin: 40px auto;
             padding: 10px;
             background: transparent;
             color: #ff5252;
@@ -69,6 +113,7 @@
             border-radius: 5px;
             cursor: pointer;
             text-align: center;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -78,8 +123,17 @@
     <div class="balance-title">Available Balance</div>
     <div class="balance-amount">₦<span id="wallet-balance">0.00</span></div>
     
-    <div class="deposit-section">
-        <h4>👇 Fund Your Wallet Via Bank Transfer</h4>
+    <div class="action-grid">
+        <button class="action-btn" onclick="toggleDepositBox()">
+            📥 Deposit
+        </button>
+        <button class="action-btn withdraw" onclick="triggerWithdrawal()">
+            📤 Withdraw
+        </button>
+    </div>
+    
+    <div class="deposit-section" id="deposit-box">
+        <h4>Bank Transfer Details</h4>
         <div class="bank-details">
             <p>Bank Name: <span id="bank-name">Loading...</span></p>
             <p>Account Number: <span id="account-number">Loading...</span></p>
@@ -91,7 +145,6 @@
 <button class="logout-btn" onclick="logout()">Logout</button>
 
 <script>
-    // YOUR LIVE RENDER SERVER URL
     const backendUrl = "https://gmpay.onrender.com";
 
     async function loadDashboardData() {
@@ -104,7 +157,6 @@
         }
 
         try {
-            // We use the secure login endpoint to fetch fresh profile and banking details
             const response = await fetch(`${backendUrl}/api/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -114,29 +166,40 @@
             const data = await response.json();
 
             if (response.ok) {
-                // Update Balance (Defaults to 0.00 on fresh logins until webhook alerts a deposit)
-                document.getElementById('wallet-balance').innerText = "0.00";
+                // Fix: Pull data values dynamically from backend instead of forcing 0.00
+                document.getElementById('wallet-balance').innerText = parseFloat(data.depositBalance || 0).toFixed(2);
                 
-                // Update Assigned Bank Transfer Details cleanly
                 if (data.accountNumber && data.accountNumber !== "Not Generated") {
                     document.getElementById('bank-name').innerText = data.bankName;
                     document.getElementById('account-number').innerText = data.accountNumber;
-                    
-                    // Pull user's email to show on dashboard as account identifier
                     document.getElementById('account-name').innerText = data.email.split('@')[0].toUpperCase() + " - GMPAY";
                 } else {
-                    document.getElementById('account-number').innerText = "Processing Account...";
-                    document.getElementById('bank-name').innerText = "Pending Allocation";
+                    document.getElementById('account-number').innerText = "Processing...";
                 }
             } else {
-                alert("Session expired. Please re-login.");
                 logout();
             }
         } catch (err) {
             console.error(err);
             document.getElementById('account-number').innerText = "Connection Error";
-            document.getElementById('bank-name').innerText = "Offline";
-            document.getElementById('account-name').innerText = "Offline";
+        }
+    }
+
+    // Toggle showing bank details when they hit deposit
+    function toggleDepositBox() {
+        const box = document.getElementById('deposit-box');
+        box.classList.toggle('active');
+    }
+
+    // Handles withdrawal interactions
+    function triggerWithdrawal() {
+        const currentBalance = document.getElementById('wallet-balance').innerText;
+        if (parseFloat(currentBalance) <= 0) {
+            alert("Error: Insufficient funds in your wallet to process a withdrawal.");
+        } else {
+            // This links out to your withdrawal routing logic later
+            const amount = prompt("Enter the amount you wish to withdraw:");
+            if(amount) alert(`Processing payout request of ₦${amount}...`);
         }
     }
 
@@ -145,7 +208,6 @@
         window.location.href = "login.html";
     }
 
-    // Load data instantly when screen opens
     window.onload = loadDashboardData;
 </script>
 </body>
