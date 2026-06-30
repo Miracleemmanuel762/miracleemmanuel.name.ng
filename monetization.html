@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Web Monetization | Master the Future of Web Revenue</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0a0f1d;
+            --bg-card: #131c31;
+            --primary: #00ff87;
+            --secondary: #60efff;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Header Style matching your ecosystem */
+        header {
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 5% 60px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 255, 135, 0.15);
+            filter: blur(120px);
+            border-radius: 50%;
+            top: 20%;
+            left: 10%;
+            z-index: -1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(96, 239, 255, 0.15);
+            filter: blur(120px);
+            border-radius: 50%;
+            bottom: 20%;
+            right: 10%;
+            z-index: -1;
+        }
+
+        .badge {
+            background: rgba(0, 255, 135, 0.1);
+            border: 1px solid rgba(0, 255, 135, 0.2);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin-bottom: 40px;
+        }
+
+        /* Action Buttons */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gradient);
+            color: #000;
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(0, 255, 135, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 255, 135, 0.4);
+        }
+
+        /* Content Blocks Grid */
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 255, 135, 0.2);
+        }
+
+        .card .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: rgba(96, 239, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .card .icon-wrapper i {
+            font-size: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Showcase / Example Section */
+        .showcase-box {
+            background: linear-gradient(135deg, rgba(19, 28, 49, 0.8) 0%, rgba(10, 15, 29, 0.8) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 50px;
+            margin-top: 40px;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .showcase-side h4 {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .showcase-side p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .old-way { border-left: 4px solid #ff4a4a; padding-left: 20px; }
+        .new-way { border-left: 4px solid var(--primary); padding-left: 20px; }
+
+        /* Footer Sticky Bar for Conversions */
+        .sticky-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(19, 28, 49, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .sticky-text p { font-weight: 600; font-size: 1.1rem;}
+        .sticky-text span { color: var(--primary); }
+
+        .sticky-bar .cta-btn {
+            padding: 10px 24px;
+            font-size: 0.95rem;
+            border-radius: 8px;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.3rem; }
+            .showcase-grid { grid-template-columns: 1fr; gap: 30px; }
+            .showcase-box { padding: 30px; }
+            .sticky-bar { flex-direction: column; text-align: center; gap: 15px; padding: 20px; }
+            body { padding-bottom: 120px; } /* Prevent footer overlap */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            <i class="fa-solid fa-cubes"></i> GLOBALMEDIA
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="badge">
+            <i class="fa-solid fa-bolt"></i> Live Training & Strategy
+        </div>
+        <h1>Unlock a New Stream of Income with <span>Web Monetization</span></h1>
+        <p>Stop relying entirely on clunky ads and restrictive paywalls. Learn how to stream micropayments straight to your wallet second-by-second while users view your site.</p>
+        <a href="https://flutterwave.com/pay/cqbxzwrb4i8x" target="_blank" class="cta-btn">
+            Enroll in the Masterclass <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </section>
+
+    <section class="section-container">
+        <h2 class="section-title">What is <span>Web Monetization</span>?</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="icon-wrapper"><i class="fa-solid fa-wave-square"></i></div>
+                <h3>Native Streaming Pay</h3>
+                <p>It's an open web standard that allows browser-to-wallet instant micropayments seamlessly moving in the background.</p>
+            </div>
+            <div class="card">
+                <div class="icon-wrapper"><i class="fa-solid fa-eye-slash"></i></div>
+                <h3>Frictionless Experience</h3>
+                <p>No card fields to fill, no authentication codes required. If your readers hold a monetized wallet, your platform bills automatically.</p>
+            </div>
+            <div class="card">
+                <div class="icon-wrapper"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <h3>Instant Settlements</h3>
+                <p>Skip the 30-day payout holding periods from classic ad platforms. Money drops into your wallet address in real time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container" style="padding-top: 0;">
+        <h2 class="section-title">The Power of <span>The Scroll</span></h2>
+        <div class="showcase-box">
+            <div class="showcase-grid">
+                <div class="showcase-side old-way">
+                    <h4>The Old Framework</h4>
+                    <p>A user drops on your platform. They are targeted by three massive banners. Disturbed, they boot up an ad-blocker layout. You generate exactly <b>$0.00</b> for valuable setup files and content.</p>
+                </div>
+                <div class="showcase-side new-way">
+                    <h4>The Monetized Framework</h4>
+                    <p>The instant your page structural layout finishes processing, an invisible micro-payment sequence spins up. For every single minute they absorb your guides, streams of profit lock straight down into your portal configuration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="sticky-bar">
+        <div class="sticky-text">
+            <p>Ready to upgrade your system architecture? <span>Learn Web Monetization Today</span></p>
+        </div>
+        <a href="https://flutterwave.com/pay/cqbxzwrb4i8x" target="_blank" class="cta-btn">
+            Get Instant Access <i class="fa-solid fa-lock"></i>
+        </a>
+    </div>
+
+</body>
+  </html>
