@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0B0F19;
+            --bg-card: #151D30;
+            --bg-sidebar: #0F1626;
+            --accent-glow: linear-gradient(135deg, #2563EB, #7C3AED);
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border-color: rgba(255, 255, 255, 0.05);
+            --success: #10B981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            display: flex;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- SIDEBAR --- */
+        aside {
+            width: 260px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 1.5rem;
+            position: fixed;
+            height: 100vh;
+        }
+
+        .brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            background: var(--accent-glow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-item a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item.active a, .nav-item a:hover {
+            color: var(--text-main);
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        /* --- MAIN CONTENT AREA --- */
+        main {
+            margin-left: 260px;
+            flex-grow: 1;
+            padding: 2.5rem;
+            max-width: 1200px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .welcome-back h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .welcome-back p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- GLOBAL PARTNER BANNER --- */
+        .partner-banner {
+            background: var(--accent-glow);
+            padding: 2rem;
+            border-radius: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
+        }
+
+        .partner-text h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .partner-text p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+        }
+
+        .partner-btn {
+            background-color: #FFFFFF;
+            color: #0F1626;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .partner-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- SERVICE GRID --- */
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        .service-icon {
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: #3B82F6;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .price-ngn {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .price-usd {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-right: 5px;
+        }
+
+        .action-btn {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.65rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .action-btn:hover {
+            background: var(--accent-glow);
+            border-color: transparent;
+        }
+
+        /* Responsive Breakpoint */
+        @media (max-width: 900px) {
+            aside { width: 70px; padding: 2rem 0.5rem; align-items: center; }
+            .brand span, .nav-item span { display: none; }
+            main { margin-left: 70px; padding: 1.5rem; }
+            .partner-banner { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <div class="brand">
+            <i class="fa-solid to fa-layer-group"></i><span>CONSOLE</span>
+        </div>
+        <ul class="nav-links">
+            <li class="nav-item active"><a href="#"><i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span></a></li>
+            <li class="nav-item"><a href="#"><i class="fa-solid fa-graduation-cap"></i> <span>Academy</span></a></li>
+            <li class="nav-item"><a href="#"><i class="fa-solid fa-laptop-code"></i> <span>Websites</span></a></li>
+            <li class="nav-item"><a href="#"><i class="fa-solid fa-handshake"></i> <span>Partnership</span></a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <header>
+            <div class="welcome-back">
+                <h1 id="user-greeting">Welcome back, Developer</h1>
+                <p>Monitor your active courses and custom platform development.</p>
+            </div>
+        </header>
+
+        <div class="partner-banner">
+            <div class="partner-text">
+                <h2>Become a Partner!</h2>
+                <p>Monetize your platforms, unlock exclusive visual design modules, and scale your brand globally.</p>
+            </div>
+            <button class="partner-btn">Get Started</button>
+        </div>
+
+        <h3 class="section-title"><i class="fa-solid fa-cubes"></i> Available Programs & Services</h3>
+        
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <div>
+                    <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                    <div class="service-title">Learn Web Development</div>
+                </div>
+                <div>
+                    <div class="price-container">
+                        <span class="price-ngn">₦10,000</span>
+                        <span class="price-usd">/ $6.67</span>
+                    </div>
+                    <button class="action-btn">Enroll Now</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <div class="service-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+                    <div class="service-title">WAPAXO Development</div>
+                </div>
+                <div>
+                    <div class="price-container">
+                        <span class="price-ngn">₦5,000</span>
+                        <span class="price-usd">/ $3.33</span>
+                    </div>
+                    <button class="action-btn">Purchase Access</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <div class="service-title">Learn AI Prompts</div>
+                </div>
+                <div>
+                    <div class="price-container">
+                        <span class="price-ngn">₦2,000</span>
+                        <span class="price-usd">/ $1.33</span>
+                    </div>
+                    <button class="action-btn">Enroll Now</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="service-title">Learn Web Monetization</div>
+                </div>
+                <div>
+                    <div class="price-container">
+                        <span class="price-ngn">₦5,000</span>
+                        <span class="price-usd">/ $3.33</span>
+                    </div>
+                    <button class="action-btn">Enroll Now</button>
+                </div>
+            </div>
+
+            <div class="service-card" style="border-color: rgba(16, 185, 129, 0.2);">
+                <div>
+                    <div class="service-icon" style="color: var(--success);"><i class="fa-solid fa-globe"></i></div>
+                    <div class="service-title">Get Your Website Done</div>
+                </div>
+                <div>
+                    <div class="price-container">
+                        <span class="price-old">₦15,000</span>
+                        <span class="price-ngn" style="color: var(--success);">₦10,000</span>
+                        <span class="price-usd">/ $6.67</span>
+                    </div>
+                    <button class="action-btn" style="background: rgba(16, 185, 129, 0.1); color: #FFFFFF; border-color: rgba(16, 185, 129, 0.3);">Order Site</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script type="module">
+        // Import Firebase core setup modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // TODO: Insert your unique Firebase project configuration object here
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize App & Services
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Track Current User Authenticated Session
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                try {
+                    // Try to grab profile info from a 'users' collection using UID
+                    const userRef = doc(db, "users", user.uid);
+                    const userSnap = await getDoc(userRef);
+                    
+                    if (userSnap.exists() && userSnap.data().name) {
+                        document.getElementById('user-greeting').innerText = `Welcome back, ${userSnap.data().name}`;
+                    } else if (user.displayName) {
+                        document.getElementById('user-greeting').innerText = `Welcome back, ${user.displayName}`;
+                    }
+                } catch (error) {
+                    console.log("Error querying Firestore profile data:", error);
+                }
+            } else {
+                // System fallback state if unauthenticated
+                document.getElementById('user-greeting').innerText = "Welcome back, Guest";
+            }
+        });
+    </script>
+</body>
+      </html>
