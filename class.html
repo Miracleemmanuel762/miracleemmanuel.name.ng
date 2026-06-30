@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiveKit Video Room</title>
+  <script src="https://cdn.jsdelivr.net/npm/livekit-client/dist/livekit-client.umd.min.js"></script>
+  <style>
+    #video-container video {
+      width: 320px;
+      height: 240px;
+      background: #222;
+      margin: 10px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>LiveKit Connection Test</h2>
+  <button id="join-btn">Join Stream</button>
+  
+  <div id="video-container"></div>
+
+  <script>
+    // Grab the LiveKit classes from the global window object
+    const { Room, RoomEvent } = LiveKitClient;
+
+    const LIVEKIT_URL = "wss://your-livekit-server-url"; // Replace with your actual LiveKit URL
+    const BACKEND_URL = "http://localhost:3000/get-token";
+
+    document.getElementById('join-btn').addEventListener('click', async () => {
+      try {
+        // 1. Fetch the secure token from your Node.js backend
+        const response = await fetch(BACKEND_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            roomName: "main-room",
+            participantName: "User_" + Math.floor(Math.random() * 100)
+          })
+        });
+        const data = await response.json();
+        const token = data.token;
+
+        // 2. Initialize the LiveKit Room
+        const room = new Room();
+
+        // 3. Set up listeners to handle when other users turn on their video
+        room.on(RoomEvent.TrackSubscribed, (track) => {
+          if (track.kind === 'video' || track.kind === 'audio') {
+            const element = track.attach(); // Automatically creates a <video> or <audio> tag
+            document.getElementById('video-container').appendChild(element);
+          }
+        });
+
+        // 4. Connect to the LiveKit server instance
+        await room.connect(LIVEKIT_URL, token);
+        console.log("Successfully connected to room:", room.name);
+
+        // 5. Turn on and publish your own mic and camera
+        await room.localParticipant.enableCameraAndMicrophone();
+        console.log("Local camera and mic published!");
+
+      } catch (error) {
+        console.error("Error joining video room:", error);
+      }
+    });
+  </script>
+</body>
+  </html>
