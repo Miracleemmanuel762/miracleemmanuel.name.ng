@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAPAXO - Advanced Site Builder</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #8b5cf6;
+            --accent-hover: #7c3aed;
+            --success: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            max-width: 1200px;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        main {
+            width: 100%;
+            max-width: 800px;
+            padding: 1rem;
+            flex-grow: 1;
+        }
+
+        .hero-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 1px solid #334155;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .highlight {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .feature-item h4 {
+            margin-bottom: 0.25rem;
+            color: var(--text-main);
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--success);
+            margin: 1.5rem 0;
+        }
+
+        .price-tag span {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(139, 92, 246, 0.4);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+        }
+
+        .note-box {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            border: 1px dashed rgba(139, 92, 246, 0.3);
+        }
+
+        footer {
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">WAPAXO</div>
+        <div class="tagline">The Next Step in Social Media & Platform Development</div>
+    </header>
+
+    <main>
+        <div class="hero-card">
+            <h2>Build Without the Complexity</h2>
+            
+            <p>Ready to level up your development game? <span class="highlight">WAPAXO</span> empowers you to seamlessly build fully functional download sites, social media platforms, and customized individual websites.</p>
+            
+            <p>Forget tearing your hair out over complex code. <span class="highlight">Zero JavaScript is involved.</span> WAPAXO utilizes an intuitive, powerful system of dedicated <strong>WAPAXO tags</strong> to structure and power your platforms effortlessly.</p>
+
+            <div class="features">
+                <div class="feature-item">
+                    <h4>Social Media Sites</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Deploy functional social hubs using native tags.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Download Portals</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Organize and deliver files with structured ease.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Individual Sites</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Tailor unique web projects to your exact vision.</p>
+                </div>
+            </div>
+
+            <p>Think of it as a fresh start. If you want to advance into social media development, this gives you the crucial, practical blueprint of how these massive networks operate behind the scenes.</p>
+
+            <div class="price-tag">
+                ₦5,000 / <span>$3.33</span>
+            </div>
+
+            <a href="https://flutterwave.com/pay/7lcrbcoiqwxl" target="_blank" class="cta-btn">Get Started Now</a>
+
+            <div class="note-box">
+                <p style="margin: 0; font-style: italic;">"It's a foundational stepping stone. Experiencing how social media architecture functions fundamentally changes how you think as a developer."</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 WAPAXO. All rights reserved. Built for future-ready developers.
+    </footer>
+
+</body>
+      </html>
