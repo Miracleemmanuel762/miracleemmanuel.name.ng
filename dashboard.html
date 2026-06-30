@@ -141,6 +141,8 @@
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
@@ -228,6 +230,9 @@
         }
 
         .action-btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
             width: 100%;
             background-color: rgba(255, 255, 255, 0.04);
             border: 1px solid var(--border-color);
@@ -237,6 +242,7 @@
             margin-top: 1.5rem;
             cursor: pointer;
             font-weight: 500;
+            box-sizing: border-box;
             transition: all 0.2s ease;
         }
 
@@ -258,20 +264,20 @@
 
     <aside>
         <div class="brand">
-            <i class="fa-solid to fa-layer-group"></i><span>CONSOLE</span>
+            <i class="fa-solid fa-layer-group"></i><span>CONSOLE</span>
         </div>
         <ul class="nav-links">
             <li class="nav-item active"><a href="#"><i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span></a></li>
-            <li class="nav-item"><a href="#"><i class="fa-solid fa-graduation-cap"></i> <span>Academy</span></a></li>
-            <li class="nav-item"><a href="#"><i class="fa-solid fa-laptop-code"></i> <span>Websites</span></a></li>
-            <li class="nav-item"><a href="#"><i class="fa-solid fa-handshake"></i> <span>Partnership</span></a></li>
+            <li class="nav-item"><a href="web.html"><i class="fa-solid fa-graduation-cap"></i> <span>Academy</span></a></li>
+            <li class="nav-item"><a href="web.dev"><i class="fa-solid fa-laptop-code"></i> <span>Websites</span></a></li>
+            <li class="nav-item"><a href="partner.html"><i class="fa-solid fa-handshake"></i> <span>Partnership</span></a></li>
         </ul>
     </aside>
 
     <main>
         <header>
             <div class="welcome-back">
-                <h1 id="user-greeting">Welcome back, Developer</h1>
+                <h1 id="user-greeting">Loading session...</h1>
                 <p>Monitor your active courses and custom platform development.</p>
             </div>
         </header>
@@ -281,7 +287,7 @@
                 <h2>Become a Partner!</h2>
                 <p>Monetize your platforms, unlock exclusive visual design modules, and scale your brand globally.</p>
             </div>
-            <button class="partner-btn">Get Started</button>
+            <a href="partner.html" class="partner-btn">Get Started</a>
         </div>
 
         <h3 class="section-title"><i class="fa-solid fa-cubes"></i> Available Programs & Services</h3>
@@ -298,7 +304,7 @@
                         <span class="price-ngn">₦10,000</span>
                         <span class="price-usd">/ $6.67</span>
                     </div>
-                    <button class="action-btn">Enroll Now</button>
+                    <a href="web.html" class="action-btn">Enroll Now</a>
                 </div>
             </div>
 
@@ -312,7 +318,7 @@
                         <span class="price-ngn">₦5,000</span>
                         <span class="price-usd">/ $3.33</span>
                     </div>
-                    <button class="action-btn">Purchase Access</button>
+                    <a href="wapaxo.html" class="action-btn">Purchase Access</a>
                 </div>
             </div>
 
@@ -326,7 +332,7 @@
                         <span class="price-ngn">₦2,000</span>
                         <span class="price-usd">/ $1.33</span>
                     </div>
-                    <button class="action-btn">Enroll Now</button>
+                    <a href="prompt.ai" class="action-btn">Enroll Now</a>
                 </div>
             </div>
 
@@ -340,7 +346,7 @@
                         <span class="price-ngn">₦5,000</span>
                         <span class="price-usd">/ $3.33</span>
                     </div>
-                    <button class="action-btn">Enroll Now</button>
+                    <a href="mentorship.html" class="action-btn">Enroll Now</a>
                 </div>
             </div>
 
@@ -355,7 +361,7 @@
                         <span class="price-ngn" style="color: var(--success);">₦10,000</span>
                         <span class="price-usd">/ $6.67</span>
                     </div>
-                    <button class="action-btn" style="background: rgba(16, 185, 129, 0.1); color: #FFFFFF; border-color: rgba(16, 185, 129, 0.3);">Order Site</button>
+                    <a href="web.dev" class="action-btn" style="background: rgba(16, 185, 129, 0.1); color: #FFFFFF; border-color: rgba(16, 185, 129, 0.3);">Order Site</a>
                 </div>
             </div>
 
@@ -363,47 +369,59 @@
     </main>
 
     <script type="module">
-        // Import Firebase core setup modules
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
         import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
 
-        // TODO: Insert your unique Firebase project configuration object here
+        // Verified Firebase Config Credentials
         const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_AUTH_DOMAIN",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_STORAGE_BUCKET",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID"
+            apiKey: "AIzaSyAreno2SUZ6QK0LP8rlFUIFF-CAJzvCGv0",
+            authDomain: "miracle-academy-2c4f3.firebaseapp.com",
+            projectId: "miracle-academy-2c4f3",
+            storageBucket: "miracle-academy-2c4f3.firebasestorage.app",
+            messagingSenderId: "222133626495",
+            appId: "1:222133626495:web:6327141113355d26ae414a",
+            measurementId: "G-4K6WME8X97"
         };
 
         // Initialize App & Services
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getFirestore(app);
+        const analytics = getAnalytics(app);
 
-        // Track Current User Authenticated Session
+        // Helper function to extract and capitalize the first name from email payload
+        function extractFirstNameFromEmail(email) {
+            if (!email) return "Developer";
+            let usernamePart = email.split('@')[0];
+            let firstName = usernamePart.split(/[\._\-]/)[0];
+            return firstName.charAt(0).toUpperCase() + firstName.slice(1);
+        }
+
+        // State change tracking
         onAuthStateChanged(auth, async (user) => {
             if (user) {
                 try {
-                    // Try to grab profile info from a 'users' collection using UID
                     const userRef = doc(db, "users", user.uid);
                     const userSnap = await getDoc(userRef);
                     
                     if (userSnap.exists() && userSnap.data().name) {
-                        document.getElementById('user-greeting').innerText = `Welcome back, ${userSnap.data().name}`;
-                    } else if (user.displayName) {
-                        document.getElementById('user-greeting').innerText = `Welcome back, ${user.displayName}`;
+                        const firstName = userSnap.data().name.split(" ")[0];
+                        document.getElementById('user-greeting').innerText = `Welcome back, ${firstName}`;
+                    } else {
+                        const emailFirstName = extractFirstNameFromEmail(user.email);
+                        document.getElementById('user-greeting').innerText = `Welcome back, ${emailFirstName}`;
                     }
                 } catch (error) {
-                    console.log("Error querying Firestore profile data:", error);
+                    console.error("Error pulling Firestore dataset profile:", error);
+                    const emailFirstName = extractFirstNameFromEmail(user.email);
+                    document.getElementById('user-greeting').innerText = `Welcome back, ${emailFirstName}`;
                 }
             } else {
-                // System fallback state if unauthenticated
                 document.getElementById('user-greeting').innerText = "Welcome back, Guest";
             }
         });
     </script>
 </body>
-      </html>
+    </html>
