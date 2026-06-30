@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalMedia Academy - Web Development Class</title>
+    <style>
+        /* Base Variables & Theme Config */
+        :root {
+            --bg-dark: #0f111a;
+            --card-bg: #161925;
+            --accent-gold: #d4af37;
+            --accent-blue: #0070f3;
+            --text-main: #ffffff;
+            --text-muted: #a0aec0;
+            --border-color: #2d3748;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Main Enrollment Card */
+        .hero-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-top: 20px;
+        }
+
+        .price-tag {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin: 15px 0;
+        }
+
+        .price-sub {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), #0056b3);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 112, 243, 0.4);
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 112, 243, 0.6);
+        }
+
+        /* Information Grid split */
+        .grid-section {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .grid-col {
+            flex: 1;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 12px;
+            color: #ffffff;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+        }
+
+        ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .duration-badge {
+            display: inline-block;
+            background-color: rgba(0, 112, 243, 0.1);
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        /* Context containers */
+        .monetization-box, .tutorial-box, .steps-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 40px;
+        }
+
+        /* Integrated Custom Terminal IDE Display */
+        .code-window {
+            background-color: #05070f;
+            border: 1px solid #1a202c;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-window::before {
+            content: "• • •";
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            color: #4a5568;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .code-window pre {
+            margin-top: 15px;
+            color: #38bdf8;
+            font-size: 0.95rem;
+        }
+
+        .code-comment { color: #64748b; }
+        .code-tag { color: #f43f5e; }
+        .code-attr { color: #fb923c; }
+        .code-val { color: #4ade80; }
+
+        /* Step Layout */
+        .step-list {
+            margin-top: 20px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .step-text {
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .step-text strong {
+            color: #ffffff;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .grid-section { flex-direction: column; }
+            body { padding: 20px 10px; }
+        }
+    </style>
+</head>
+<body>
+  <div id="main-header"></div>
+
+    <script src="header-loader.js"></script>
+
+    <div class="container">
+
+        <section class="hero-card">
+            <div class="duration-badge">1-Month Intensive Course + Weekly Timetable Classes</div>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+                Accelerate your career with industry-standard web engineering skills. Gain hands-on competence from site design architectures to complete production deployments.
+            </p>
+            <div class="price-tag">₦10,000 / $6.67</div>
+            <p class="price-sub">All-inclusive access to live sessions, custom resource packages, and professional engineering mentorship.</p>
+            <a href="https://flutterwave.com/pay/7zakvsgzd8ai" target="_blank" class="cta-btn">Secure Your Enrollment Slot</a>
+        </section>
+
+        <div class="grid-section">
+            <div class="grid-col">
+                <h2>What You Will Learn</h2>
+                <ul>
+                    <li><strong>HTML5 Architecture:</strong> Compiling structured, clean semantic web layouts.</li>
+                    <li><strong>CSS3 Engineering:</strong> Mastering advanced media grids, variable themes, and fully responsive UIs.</li>
+                    <li><strong>Web Development Skills:</strong> Dynamic execution layouts, client interactions, and structural flow patterns.</li>
+                    <li><strong>Production Deployments:</strong> Transitioning development environments into permanent cloud infrastructures.</li>
+                    <li><strong>Custom Domains & DNS:</strong> Managing hosting zones, system mapping, and live registration assets.</li>
+                </ul>
+            </div>
+            <div class="grid-col">
+                <h2>What You Will Gain</h2>
+                <ul>
+                    <li><strong>Commercial Portfolio:</strong> Deploy real applications during the masterclass to present directly to employers.</li>
+                    <li><strong>High-Ticket Opportunities:</strong> Concrete mastery of monetizing your programming workflows instantly.</li>
+                    <li><strong>Structured Frameworks:</strong> Direct analytical guidance reviews from your lead instructor.</li>
+                    <li><strong>Developer Blueprints:</strong> Reusable structural templates, components libraries, and system logic hooks.</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="monetization-box">
+            <h2>The High-Income Landscape of Web Development</h2>
+            <p style="color: var(--text-muted); margin-bottom: 15px;">
+                Web development encompasses the creation, logic compilation, and architectural hosting optimization of live online web environments. In today's digital era, every company, service brand, and creator requires robust web environments—making software engineers consistently highly valued assets globally.
+            </p>
+            <p style="color: var(--text-muted);">
+                <strong>Primary Revenue Integration Streams:</strong>
+            </p>
+            <ul style="margin-top: 15px;">
+                <li><strong>Premium Freelancing:</strong> Building customized high-converting funnels and portfolio layers for businesses.</li>
+                <li><strong>SaaS Automation:</strong> Engineering digital logic platforms that generate predictable recurring revenue models.</li>
+                <li><strong>Traffic Networks:</strong> Designing native blogging channels and custom platforms integrated with high-yield ad systems.</li>
+            </ul>
+        </section>
+
+        <section class="tutorial-box">
+            <h2>Captivating Code Showcase</h2>
+            <p style="color: var(--text-muted);">
+                Observe how high-end markup transforms plain configurations into clean visual architectures. Below is a structured example of semantic styling:
+            </p>
+            
+            <div class="code-window">
+                <pre><code><span class="code-comment">&lt;!-- Professional Semantic UI Element --&gt;</span>
+<span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-val">"academy-card"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;h3</span> <span class="code-attr">style</span>=<span class="code-val">"color: #d4af37;"</span><span class="code-tag">&gt;</span>GlobalMedia Engineering<span class="code-tag">&lt;/h3&gt;</span>
+    <span class="code-tag">&lt;p&gt;</span>Building clean, fast responsive platforms is effortless.<span class="code-tag">&lt;/p&gt;</span>
+    <span class="code-tag">&lt;button</span> <span class="code-attr">class</span>=<span class="code-val">"btn-action"</span><span class="code-tag">&gt;</span>Initialize Engine<span class="code-tag">&lt;/button&gt;</span>
+<span class="code-tag">&lt;/div&gt;</span></code></pre>
+            </div>
+
+            <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic;">
+                Throughout this class, you will shift from viewing raw elements to architecting highly interactive online experiences from scratch.
+            </p>
+        </section>
+
+        <section class="steps-container">
+            <h2>Professional Enrollment Sequence</h2>
+            <div class="step-list">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-text"><strong>Initiate Secure Authorization:</strong> Click the secure access link to transfer onto our official processing dashboard node.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-text"><strong>Select Gateway Modality:</strong> Choose your preferred verified transaction method (Card networks, Bank Transfers, or digital wallets).</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-text"><strong>Execute Secured Transaction:</strong> Finalize the automated payment verification prompts through Flutterwave's end-to-end encrypted networks.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div class="step-text"><strong>Automated Handshake Logic:</strong> Upon successful banking settlement, the payment system routes your session parameters back instantly.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">5</div>
+                    <div class="step-text"><strong>Immediate Portal Activation:</strong> Instantly unlock your masterclass credentials, full weekly timetable access keys, and project workspaces.</div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://flutterwave.com/pay/7zakvsgzd8ai" target="_blank" class="cta-btn">Proceed to Gateway Now</a>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+  </html>
