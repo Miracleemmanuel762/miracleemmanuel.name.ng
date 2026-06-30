@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering AI Prompting | GlobalMedia Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles & Variables (GlobalMedia Branding) */
+        :root {
+            --primary-color: #0f172a; /* Deep tech slate */
+            --accent-color: #2563eb;  /* Professional royal blue */
+            --accent-glow: #3b82f6;   /* Electric blue glow */
+            --text-light: #f8fafc;    /* Crisp off-white */
+            --text-muted: #94a3b8;    /* Muted grey for descriptions */
+            --bg-card: #1e293b;       /* Dark card background */
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container & Card Layout */
+        .academy-container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--bg-card);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(37, 99, 235, 0.2);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Body Content */
+        .academy-body {
+            padding: 40px 30px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        p.description {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* Core Concepts Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        @media (max-width: 600px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-card {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-card h3 {
+            color: var(--accent-glow);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Interactive Prompt Sandbox/Example */
+        .prompt-sandbox {
+            background: #0f172a;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 35px;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+
+        .sandbox-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        .badge-pro {
+            background: var(--accent-color);
+            color: var(--text-light);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .prompt-text {
+            font-family: 'Courier New', Courier, monospace;
+            color: #34d399; /* Smooth terminal green */
+            font-size: 0.95rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid #10b981;
+        }
+
+        /* Pricing & Call to Action */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.8));
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+
+        .price-tag span {
+            color: var(--accent-glow);
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .price-sub {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--accent-color);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+    </style>
+</head>
+<body>
+<div id="main-header"></div>
+
+    <script src="header-loader.js"></script>
+<div class="academy-container">
+    <div class="academy-body">
+        
+        <h2 class="section-title"><i class="fa-solid fa-brain"></i> The Need to Master AI Assistants</h2>
+        <p class="description">
+            Artificial Intelligence is no longer a tool for the future—it is the operating system of current industry solutions. However, an AI is only as brilliant as the instructions it receives. Professionals who know how to accurately command AI assistants are rapidly replacing those who rely on basic guesswork. Mastering prompt engineering ensures you control the outcome, accelerate production times, and generate flawless results on demand.
+        </p>
+
+        <h2 class="section-title"><i class="fa-solid fa-star"></i> Master the Best Choice</h2>
+        <p class="description">
+            In a saturated market of automated tools, choosing elite mentorship is paramount. GlobalMedia Academy bridges the gap between generic AI usage and professional-grade development engineering. By mastering structured framework mechanics over surface-level tricks, you position yourself at the apex of the tech job market.
+        </p>
+
+        <h2 class="section-title"><i class="fa-solid fa-code"></i> What is an AI Prompt?</h2>
+        <p class="description">
+            An AI prompt is a precision-engineered set of context structures, constraints, instructions, and target execution directives passed to a Large Language Model (LLM). Instead of treating AI like a simple search query engine, an elite prompt establishes a specialized role, parameters for response syntax, target tone, and systematic constraints to completely eliminate factual errors and optimize code output production.
+        </p>
+
+        <h2 class="section-title"><i class="fa-solid fa-terminal"></i> Production-Grade Engineering Example</h2>
+        <div class="prompt-sandbox">
+            <div class="sandbox-header">
+                <span>System Role Execution Framework</span>
+                <span class="badge-pro">PRO TEMPLATE</span>
+            </div>
+            <div class="prompt-text">[Role]: Act as a Senior Full-Stack Web Engineer specializing in highly performant architectures.
+[Context]: Developing a user authentication gateway module for a global web platform.
+[Task]: Generate a production-grade, secure asynchronous modern JavaScript validation script for backend credential evaluation.
+[Constraints]: Implement strict error handling, prevent SQL injection vulnerabilities, use clean industry practices, and omit structural explanations. Output code blocks exclusively.</div>
+        </div>
+
+        <div class="cta-section">
+            <div class="price-tag">₦2,000 / <span>$1.33</span></div>
+            <p class="price-sub">Instant Access to Full Premium GlobalMedia Prompt Directory</p>
+            <a href="https://flutterwave.com/pay/wlpwjpfs4hgv" target="_blank" class="btn-primary">
+                <i class="fa-solid fa-bolt"></i> Get Instant Access Now
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
