@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Disclaimer | Miracle Emmanuel</title>
+
+<meta name="description"
+      content="Read the Disclaimer for the official website and blog of Miracle Emmanuel.">
+
+<meta name="author"
+      content="Miracle Emmanuel">
+
+<meta name="robots"
+      content="index, follow">
+
+<style>
+
+/* ================================
+   GLOBAL
+================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f9fc;
+    color: #172033;
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid #e6eaf0;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+}
+
+.nav {
+    max-width: 1150px;
+    margin: auto;
+
+    min-height: 72px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b5563;
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.nav-button {
+    background: #2563eb;
+    color: white !important;
+
+    padding: 10px 17px;
+    border-radius: 8px;
+}
+
+
+/* ================================
+   PAGE HERO
+================================ */
+
+.page-hero {
+    max-width: 900px;
+    margin: auto;
+
+    padding: 75px 20px 45px;
+
+    text-align: center;
+}
+
+.page-label {
+    display: inline-block;
+
+    background: #eaf2ff;
+    color: #2563eb;
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.page-hero h1 {
+    font-size: clamp(38px, 6vw, 58px);
+
+    line-height: 1.1;
+    letter-spacing: -2px;
+
+    color: #111827;
+
+    margin-bottom: 18px;
+}
+
+.page-hero p {
+    max-width: 680px;
+    margin: auto;
+
+    color: #667085;
+    font-size: 16px;
+}
+
+
+/* ================================
+   DISCLAIMER CONTENT
+================================ */
+
+.disclaimer-container {
+    max-width: 900px;
+    margin: auto;
+
+    padding: 20px;
+}
+
+.disclaimer-card {
+    background: white;
+
+    border: 1px solid #e5e9f0;
+
+    border-radius: 16px;
+
+    padding: 40px;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.04);
+}
+
+.disclaimer-card h2 {
+    color: #111827;
+
+    font-size: 24px;
+
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.disclaimer-card h2:first-of-type {
+    margin-top: 0;
+}
+
+.disclaimer-card p {
+    color: #596579;
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+
+.disclaimer-card ul {
+    margin: 10px 0 18px 22px;
+
+    color: #596579;
+
+    font-size: 15px;
+}
+
+.disclaimer-card li {
+    margin-bottom: 8px;
+}
+
+.disclaimer-card a {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.last-updated {
+    display: inline-block;
+
+    background: #f1f5f9;
+
+    color: #64748b;
+
+    padding: 7px 12px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    margin-top: 70px;
+
+    background: #111827;
+
+    color: white;
+}
+
+.footer-inner {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 55px 20px 25px;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    gap: 40px;
+}
+
+.footer-brand h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer-brand h2 span {
+    color: #60a5fa;
+}
+
+.footer-brand p {
+    color: #9ca3af;
+
+    max-width: 390px;
+
+    font-size: 14px;
+}
+
+.footer-column h3 {
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    display: block;
+
+    color: #9ca3af;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+
+    transition: 0.2s;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.copyright {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 18px 20px;
+
+    border-top: 1px solid #273244;
+
+    color: #8b95a5;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 800px) {
+
+    .nav {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a:nth-child(3),
+    .nav-links a:nth-child(4) {
+        display: none;
+    }
+
+    .page-hero {
+        padding-top: 50px;
+    }
+
+    .disclaimer-container {
+        padding: 15px;
+    }
+
+    .disclaimer-card {
+        padding: 25px 20px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     HEADER
+================================== -->
+
+<header>
+
+<nav class="nav">
+
+    <a href="index.html" class="logo">
+        Miracle<span>.</span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="blogs.html">
+            Blog
+        </a>
+
+        <a href="what-is-web-development.html">
+            Web Development
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html" class="nav-button">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+<!-- =================================
+     PAGE INTRO
+================================== -->
+
+<section class="page-hero">
+
+    <span class="page-label">
+        Important Information
+    </span>
+
+    <h1>
+        Disclaimer
+    </h1>
+
+    <p>
+        Important information about the content,
+        recommendations and resources published on
+        this website.
+    </p>
+
+</section>
+
+
+<!-- =================================
+     DISCLAIMER CONTENT
+================================== -->
+
+<main class="disclaimer-container">
+
+<div class="disclaimer-card">
+
+    <span class="last-updated">
+        Last Updated: August 2026
+    </span>
+
+
+    <h2>
+        1. General Information
+    </h2>
+
+    <p>
+        The information provided on the official website
+        and blog of <strong>Miracle Emmanuel</strong> is
+        intended for general informational and educational
+        purposes only.
+    </p>
+
+    <p>
+        Although reasonable effort is made to provide useful,
+        accurate and relevant information, no guarantee is
+        made that all information published on this website
+        will always be complete, current or error-free.
+    </p>
+
+
+    <h2>
+        2. Educational Content
+    </h2>
+
+    <p>
+        Articles, tutorials and guides relating to web
+        development, technology, SEO and digital skills
+        are provided for educational purposes.
+    </p>
+
+    <p>
+        Technology changes frequently. Methods, software,
+        platforms, recommendations and technical information
+        may become outdated over time.
+    </p>
+
+    <p>
+        You should verify important technical information
+        with official documentation or other reliable sources
+        before making significant decisions based on it.
+    </p>
+
+
+    <h2>
+        3. SEO and Digital Marketing Information
+    </h2>
+
+    <p>
+        Information relating to SEO, blogging, website
+        traffic, digital marketing or online earnings is
+        provided for educational purposes only.
+    </p>
+
+    <p>
+        No guarantee is made that following any particular
+        strategy will result in a specific amount of traffic,
+        income, search rankings or business results.
+    </p>
+
+    <p>
+        Results can vary depending on many factors, including
+        competition, content quality, search engine algorithms,
+        audience, consistency and market conditions.
+    </p>
+
+
+    <h2>
+        4. Personal Opinions
+    </h2>
+
+    <p>
+        Some articles published on this website may contain
+        personal opinions, experiences, observations or
+        perspectives.
+    </p>
+
+    <p>
+        Such opinions should not necessarily be interpreted
+        as professional, legal, financial, medical or other
+        specialized advice.
+    </p>
+
+
+    <h2>
+        5. External Links
+    </h2>
+
+    <p>
+        This website may contain links to external websites,
+        services, applications, social media platforms and
+        other third-party resources.
+    </p>
+
+    <p>
+        These links may be provided for reference,
+        convenience or additional information.
+    </p>
+
+    <p>
+        Miracle Emmanuel does not control third-party
+        websites and does not guarantee the accuracy,
+        security, availability or reliability of information
+        found on external websites.
+    </p>
+
+
+    <h2>
+        6. Third-Party Products and Services
+    </h2>
+
+    <p>
+        From time to time, this website may mention or link
+        to third-party products, platforms, tools or services.
+    </p>
+
+    <p>
+        Any decision to use a third-party product or service
+        is your responsibility. You should review the
+        provider's own terms, privacy policy and other
+        relevant information before using its services.
+    </p>
+
+
+    <h2>
+        7. Advertising
+    </h2>
+
+    <p>
+        This website may display advertisements through
+        third-party advertising services in the future.
+    </p>
+
+    <p>
+        Advertisements may be selected or delivered by
+        third-party advertising providers based on various
+        factors, which may include website content,
+        browsing activity or other information permitted
+        under their applicable policies.
+    </p>
+
+    <p>
+        The presence of an advertisement does not necessarily
+        mean that Miracle Emmanuel endorses or guarantees
+        the advertised product or service.
+    </p>
+
+
+    <h2>
+        8. No Professional Advice
+    </h2>
+
+    <p>
+        Nothing published on this website should be considered
+        professional legal, financial, medical, business or
+        other specialized advice.
+    </p>
+
+    <p>
+        If you require professional advice, you should consult
+        a qualified professional in the relevant field.
+    </p>
+
+
+    <h2>
+        9. Accuracy and Availability
+    </h2>
+
+    <p>
+        Every reasonable effort may be made to maintain the
+        website and its information, but uninterrupted
+        availability cannot be guaranteed.
+    </p>
+
+    <p>
+        Content may be changed, updated, removed or replaced
+        at any time without prior notice.
+    </p>
+
+
+    <h2>
+        10. Limitation of Responsibility
+    </h2>
+
+    <p>
+        To the extent permitted by applicable law, Miracle
+        Emmanuel shall not be responsible for losses,
+        damages or consequences arising from reliance on
+        information published on this website or from the
+        use of external websites linked from this website.
+    </p>
+
+
+    <h2>
+        11. Your Responsibility
+    </h2>
+
+    <p>
+        You are responsible for evaluating information
+        obtained from this website and determining whether
+        it is appropriate for your particular circumstances.
+    </p>
+
+
+    <h2>
+        12. Changes to This Disclaimer
+    </h2>
+
+    <p>
+        This Disclaimer may be updated from time to time
+        as the website, its content or services change.
+    </p>
+
+    <p>
+        Any updated version will be published on this page
+        with a revised "Last Updated" date.
+    </p>
+
+
+    <h2>
+        13. Contact
+    </h2>
+
+    <p>
+        If you have questions about this Disclaimer, please
+        visit the
+        <a href="contact.html">
+            Contact page
+        </a>.
+    </p>
+
+    <p>
+        You may also contact Miracle Emmanuel by email at:
+        <a href="mailto:miracleemmanuel1379@gmail.com">
+            miracleemmanuel1379@gmail.com
+        </a>
+    </p>
+
+</div>
+
+</main>
+
+
+<!-- =================================
+     FOOTER
+================================== -->
+
+<footer>
+
+<div class="footer-inner">
+
+
+    <div class="footer-brand">
+
+        <h2>
+            Miracle<span>.</span>
+        </h2>
+
+        <p>
+            The personal blog of Miracle Emmanuel —
+            sharing knowledge about web development,
+            technology, SEO, digital skills, motivation
+            and personal growth.
+        </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>
+            Explore
+        </h3>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="blogs.html">
+            Blog
+        </a>
+
+        <a href="what-is-web-development.html">
+            What Is Web Development?
+        </a>
+
+        <a href="about.html">
+            About Me
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>
+            Important Links
+        </h3>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <a href="privacy-policy.html">
+            Privacy Policy
+        </a>
+
+        <a href="terms-of-service.html">
+            Terms of Service
+        </a>
+
+        <a href="disclaimer.html">
+            Disclaimer
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<div class="copyright">
+
+    © 2026 Miracle Emmanuel.
+    All rights reserved.
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
