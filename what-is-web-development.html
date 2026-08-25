@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>What Is Web Development? | Miracle Emmanuel</title>
+
+    <meta name="description"
+          content="Learn what web development is, what web developers do, and the basic technologies used to build websites. A simple beginner's guide by Miracle Emmanuel.">
+
+    <meta name="keywords"
+          content="what is web development, web development for beginners, HTML, CSS, JavaScript, web developer">
+
+    <meta name="author"
+          content="Miracle Emmanuel">
+
+    <meta name="robots"
+          content="index, follow">
+
+
+<style>
+
+/* ================================
+   GLOBAL
+================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f9fc;
+    color: #172033;
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid #e6eaf0;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+}
+
+.nav {
+    max-width: 1150px;
+    margin: auto;
+
+    min-height: 72px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b5563;
+
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.nav-button {
+    background: #2563eb;
+    color: white !important;
+
+    padding: 10px 17px;
+
+    border-radius: 8px;
+}
+
+
+/* ================================
+   ARTICLE HEADER
+================================ */
+
+.article-header {
+    max-width: 900px;
+    margin: auto;
+
+    padding: 70px 20px 40px;
+
+    text-align: center;
+}
+
+.article-label {
+    display: inline-block;
+
+    background: #eaf2ff;
+    color: #2563eb;
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.article-header h1 {
+    font-size: clamp(36px, 6vw, 58px);
+
+    line-height: 1.1;
+
+    letter-spacing: -2px;
+
+    color: #111827;
+
+    margin-bottom: 20px;
+}
+
+.article-intro {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #667085;
+
+    font-size: 17px;
+}
+
+
+/* ================================
+   ARTICLE
+================================ */
+
+.article-container {
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 20px;
+}
+
+.article {
+    background: white;
+
+    border: 1px solid #e5e9f0;
+
+    border-radius: 16px;
+
+    padding: 45px;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.04);
+}
+
+.article h2 {
+    color: #111827;
+
+    font-size: 28px;
+
+    line-height: 1.3;
+
+    margin-top: 35px;
+
+    margin-bottom: 15px;
+}
+
+.article h3 {
+    color: #111827;
+
+    font-size: 21px;
+
+    margin-top: 25px;
+
+    margin-bottom: 10px;
+}
+
+.article p {
+    color: #525d6f;
+
+    font-size: 16px;
+
+    margin-bottom: 18px;
+}
+
+.article ul {
+    margin: 15px 0 20px 25px;
+}
+
+.article li {
+    color: #525d6f;
+
+    margin-bottom: 8px;
+}
+
+.article strong {
+    color: #172033;
+}
+
+
+/* ================================
+   CODE
+================================ */
+
+.article pre {
+    background: #111827;
+
+    color: #e5e7eb;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    overflow-x: auto;
+
+    margin: 20px 0;
+}
+
+.article code {
+    font-family: monospace;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   INFO BOX
+================================ */
+
+.info-box {
+    background: #eff6ff;
+
+    border-left: 4px solid #2563eb;
+
+    padding: 18px 20px;
+
+    margin: 25px 0;
+
+    border-radius: 8px;
+}
+
+.info-box p {
+    margin: 0;
+
+    color: #334155;
+}
+
+
+/* ================================
+   NEXT ARTICLE
+================================ */
+
+.next-article {
+    margin-top: 35px;
+
+    padding: 25px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+}
+
+.next-article a {
+    color: #2563eb;
+
+    font-weight: 700;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    margin-top: 70px;
+
+    background: #111827;
+
+    color: white;
+}
+
+.footer-inner {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 55px 20px 25px;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    gap: 40px;
+}
+
+.footer-brand h2 {
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.footer-brand h2 span {
+    color: #60a5fa;
+}
+
+.footer-brand p {
+    color: #9ca3af;
+
+    max-width: 390px;
+
+    font-size: 14px;
+}
+
+.footer-column h3 {
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    display: block;
+
+    color: #9ca3af;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+
+    transition: 0.2s;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.copyright {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 18px 20px;
+
+    border-top: 1px solid #273244;
+
+    color: #8b95a5;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 800px) {
+
+    .nav {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .nav-links {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: flex-end;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .article {
+        padding: 28px 22px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a:nth-child(3),
+    .nav-links a:nth-child(4) {
+        display: none;
+    }
+
+    .article-header {
+        padding-top: 50px;
+    }
+
+    .article {
+        padding: 25px 18px;
+    }
+
+    .article h2 {
+        font-size: 25px;
+    }
+
+    .article p {
+        font-size: 15px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     HEADER
+================================== -->
+
+<header>
+
+<nav class="nav">
+
+    <a href="index.html" class="logo">
+        Miracle<span>.</span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="blogs.html">
+            Blog
+        </a>
+
+        <a href="what-is-web-development.html">
+            Web Development
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html" class="nav-button">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+
+<!-- =================================
+     ARTICLE HEADER
+================================== -->
+
+<section class="article-header">
+
+    <span class="article-label">
+        Web Development
+    </span>
+
+    <h1>
+        What Is Web Development?
+    </h1>
+
+    <p class="article-intro">
+        A simple beginner-friendly introduction to web
+        development, what web developers do, and the basic
+        technologies used to create websites.
+    </p>
+
+</section>
+
+
+
+<!-- =================================
+     ARTICLE CONTENT
+================================== -->
+
+<main class="article-container">
+
+<article class="article">
+
+
+    <p>
+        <strong>Web development</strong> is the process of
+        creating, building and maintaining websites and
+        web applications that people access through the
+        internet.
+    </p>
+
+
+    <p>
+        Whenever you visit a website such as a blog, online
+        store, social media platform or learning platform,
+        web development is involved in creating that
+        experience.
+    </p>
+
+
+    <h2>
+        What Does a Web Developer Do?
+    </h2>
+
+
+    <p>
+        A web developer uses different technologies and
+        programming languages to create websites and
+        web applications.
+    </p>
+
+
+    <p>
+        Depending on their area of work, a web developer
+        may create webpages, build features, make websites
+        responsive, create forms, fix problems and maintain
+        websites.
+    </p>
+
+
+    <h2>
+        The Basic Technologies of Web Development
+    </h2>
+
+
+    <p>
+        There are many technologies used in web development,
+        but beginners commonly start with three important
+        technologies:
+    </p>
+
+
+    <ul>
+
+        <li>
+            <strong>HTML</strong> — provides the structure
+            of a webpage.
+        </li>
+
+        <li>
+            <strong>CSS</strong> — controls the appearance
+            and design of a webpage.
+        </li>
+
+        <li>
+            <strong>JavaScript</strong> — adds interactivity
+            and functionality to webpages.
+        </li>
+
+    </ul>
+
+
+    <h2>
+        1. HTML
+    </h2>
+
+
+    <p>
+        <strong>HTML</strong> stands for
+        <strong>HyperText Markup Language</strong>.
+    </p>
+
+
+    <p>
+        HTML is used to create the basic structure of
+        a webpage. It allows you to add headings,
+        paragraphs, images, links, lists and other
+        elements.
+    </p>
+
+
+    <p>
+        For example:
+    </p>
+
+
+<pre><code>&lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+
+&lt;p&gt;This is my first webpage.&lt;/p&gt;</code></pre>
+
+
+    <p>
+        In simple terms, HTML tells the browser
+        <strong>what the content is</strong>.
+    </p>
+
+
+
+    <h2>
+        2. CSS
+    </h2>
+
+
+    <p>
+        <strong>CSS</strong> stands for
+        <strong>Cascading Style Sheets</strong>.
+    </p>
+
+
+    <p>
+        CSS is used to style and design webpages.
+        With CSS, you can control colors, fonts,
+        spacing, borders, backgrounds and layouts.
+    </p>
+
+
+    <p>
+        For example:
+    </p>
+
+
+<pre><code>h1 {
+    color: blue;
+}</code></pre>
+
+
+    <p>
+        In simple terms, CSS tells the browser
+        <strong>how the content should look</strong>.
+    </p>
+
+
+
+    <h2>
+        3. JavaScript
+    </h2>
+
+
+    <p>
+        <strong>JavaScript</strong> is a programming
+        language commonly used to add interactivity
+        and functionality to webpages.
+    </p>
+
+
+    <p>
+        JavaScript can be used for things such as
+        interactive menus, pop-ups, dynamic forms,
+        sliders and many other interactive features.
+    </p>
+
+
+    <div class="info-box">
+
+        <p>
+            <strong>Beginner tip:</strong>
+            You do not need to learn everything at once.
+            HTML and CSS are excellent technologies to
+            start with when learning web development.
+        </p>
+
+    </div>
+
+
+
+    <h2>
+        Website vs Webpage
+    </h2>
+
+
+    <p>
+        A <strong>webpage</strong> is a single page
+        that exists on the internet.
+    </p>
+
+
+    <p>
+        For example:
+    </p>
+
+
+<pre><code>what-is-web-development.html</code></pre>
+
+
+    <p>
+        A <strong>website</strong> is usually a collection
+        of related webpages that work together.
+    </p>
+
+
+    <p>
+        For example, a website might contain:
+    </p>
+
+
+    <ul>
+
+        <li>Home</li>
+
+        <li>About</li>
+
+        <li>Blog</li>
+
+        <li>Contact</li>
+
+        <li>Privacy Policy</li>
+
+    </ul>
+
+
+    <p>
+        These pages can work together to form a complete
+        website.
+    </p>
+
+
+
+    <h2>
+        Is Web Development Difficult?
+    </h2>
+
+
+    <p>
+        Web development can seem difficult when you are
+        just starting, but you do not need to learn
+        everything at once.
+    </p>
+
+
+    <p>
+        A simple learning path for a beginner can be:
+    </p>
+
+
+    <div class="info-box">
+
+        <p>
+            <strong>
+                HTML → CSS → JavaScript → Advanced Technologies
+            </strong>
+        </p>
+
+    </div>
+
+
+    <p>
+        The most important thing is to practice what you
+        learn. Start with small projects and gradually
+        increase the difficulty as your skills improve.
+    </p>
+
+
+
+    <h2>
+        Conclusion
+    </h2>
+
+
+    <p>
+        Web development is the process of creating and
+        maintaining websites and web applications.
+    </p>
+
+
+    <p>
+        HTML provides the structure, CSS controls the
+        appearance, and JavaScript can provide
+        interactivity and functionality.
+    </p>
+
+
+    <p>
+        If you are completely new to web development,
+        starting with HTML and CSS is a simple and
+        practical way to begin your journey.
+    </p>
+
+
+    <!-- ============================
+         NEXT ARTICLE
+    ============================= -->
+
+    <div class="next-article">
+
+        <strong>
+            Continue Learning
+        </strong>
+
+        <p>
+            Ready to take the next step?
+        </p>
+
+        <a href="html-basics.html">
+            Learn HTML Basics →
+        </a>
+
+    </div>
+
+
+</article>
+
+</main>
+
+
+
+<!-- =================================
+     FOOTER
+================================== -->
+
+<footer>
+
+<div class="footer-inner">
+
+
+    <div class="footer-brand">
+
+        <h2>
+            Miracle<span>.</span>
+        </h2>
+
+        <p>
+            The personal blog of Miracle Emmanuel —
+            sharing knowledge about web development,
+            technology, SEO, digital skills, motivation
+            and personal growth.
+        </p>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            Explore
+        </h3>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="blogs.html">
+            Blog
+        </a>
+
+        <a href="what-is-web-development.html">
+            What Is Web Development?
+        </a>
+
+        <a href="about.html">
+            About Me
+        </a>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            Important Links
+        </h3>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <a href="privacy-policy.html">
+            Privacy Policy
+        </a>
+
+        <a href="terms-of-service.html">
+            Terms of Service
+        </a>
+
+        <a href="disclaimer.html">
+            Disclaimer
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<div class="copyright">
+
+    © 2026 Miracle Emmanuel.
+    All rights reserved.
+
+</div>
+
+</footer>
+
+
+</body>
+  </html>
