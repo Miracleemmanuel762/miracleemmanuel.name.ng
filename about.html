@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>About Miracle Emmanuel | Web Developer & Writer</title>
+
+<meta name="description"
+      content="Learn more about Miracle Emmanuel, a web developer, motivational speaker, WAPAXO social media development expert, web development coach, writer and SEO enthusiast.">
+
+<meta name="author"
+      content="Miracle Emmanuel">
+
+<meta name="robots"
+      content="index, follow">
+
+
+<style>
+
+/* ================================
+   GLOBAL
+================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f9fc;
+    color: #172033;
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid #e6eaf0;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+}
+
+.nav {
+    max-width: 1150px;
+    margin: auto;
+
+    min-height: 72px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b5563;
+
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.nav-button {
+    background: #2563eb;
+    color: white !important;
+
+    padding: 10px 17px;
+
+    border-radius: 8px;
+}
+
+
+/* ================================
+   PAGE HERO
+================================ */
+
+.page-hero {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 75px 20px 45px;
+
+    text-align: center;
+}
+
+.page-label {
+    display: inline-block;
+
+    background: #eaf2ff;
+    color: #2563eb;
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.page-hero h1 {
+    font-size: clamp(38px, 6vw, 58px);
+
+    line-height: 1.1;
+
+    letter-spacing: -2px;
+
+    color: #111827;
+
+    margin-bottom: 18px;
+}
+
+.page-hero p {
+    max-width: 680px;
+
+    margin: auto;
+
+    color: #667085;
+
+    font-size: 17px;
+}
+
+
+/* ================================
+   ABOUT CONTAINER
+================================ */
+
+.about-container {
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 20px;
+}
+
+
+/* ================================
+   PROFILE SECTION
+================================ */
+
+.profile-section {
+    background: white;
+
+    border: 1px solid #e5e9f0;
+
+    border-radius: 18px;
+
+    padding: 40px;
+
+    display: grid;
+
+    grid-template-columns: 250px 1fr;
+
+    gap: 40px;
+
+    align-items: center;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.04);
+}
+
+.profile-image {
+    text-align: center;
+}
+
+.profile-image img {
+    width: 210px;
+    height: 210px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 7px solid #eef4ff;
+}
+
+.profile-content h2 {
+    font-size: 30px;
+
+    color: #111827;
+
+    margin-bottom: 5px;
+}
+
+.profile-title {
+    color: #2563eb;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+.profile-content p {
+    color: #596579;
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ================================
+   CONTENT CARDS
+================================ */
+
+.content-section {
+    margin-top: 25px;
+
+    background: white;
+
+    border: 1px solid #e5e9f0;
+
+    border-radius: 16px;
+
+    padding: 35px;
+}
+
+.content-section h2 {
+    font-size: 27px;
+
+    color: #111827;
+
+    margin-bottom: 15px;
+}
+
+.content-section p {
+    color: #596579;
+
+    font-size: 15px;
+
+    margin-bottom: 16px;
+}
+
+
+/* ================================
+   EXPERTISE
+================================ */
+
+.expertise-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.expertise {
+    padding: 22px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e7ebf0;
+
+    border-radius: 12px;
+}
+
+.expertise h3 {
+    font-size: 17px;
+
+    color: #111827;
+
+    margin-bottom: 6px;
+}
+
+.expertise p {
+    font-size: 13px;
+
+    margin: 0;
+}
+
+
+/* ================================
+   MISSION
+================================ */
+
+.mission {
+    margin-top: 25px;
+
+    background: #111827;
+
+    color: white;
+
+    border-radius: 17px;
+
+    padding: 45px 35px;
+
+    text-align: center;
+}
+
+.mission h2 {
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+.mission p {
+    max-width: 680px;
+
+    margin: auto;
+
+    color: #cbd5e1;
+
+    font-size: 15px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    margin-top: 70px;
+
+    background: #111827;
+
+    color: white;
+}
+
+.footer-inner {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 55px 20px 25px;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    gap: 40px;
+}
+
+.footer-brand h2 {
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.footer-brand h2 span {
+    color: #60a5fa;
+}
+
+.footer-brand p {
+    color: #9ca3af;
+
+    max-width: 390px;
+
+    font-size: 14px;
+}
+
+.footer-column h3 {
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    display: block;
+
+    color: #9ca3af;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+
+    transition: 0.2s;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.copyright {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 18px 20px;
+
+    border-top: 1px solid #273244;
+
+    color: #8b95a5;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 800px) {
+
+    .nav {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .nav-links {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: flex-end;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .profile-section {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding: 30px 22px;
+    }
+
+    .profile-image img {
+        width: 175px;
+        height: 175px;
+    }
+
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a:nth-child(3),
+    .nav-links a:nth-child(4) {
+        display: none;
+    }
+
+    .page-hero {
+        padding-top: 50px;
+    }
+
+    .profile-section {
+        padding: 25px 18px;
+    }
+
+    .content-section {
+        padding: 25px 20px;
+    }
+
+    .mission {
+        padding: 40px 22px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     HEADER
+================================== -->
+
+<header>
+
+<nav class="nav">
+
+    <a href="index.html" class="logo">
+        Miracle<span>.</span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="blogs.html">
+            Blog
+        </a>
+
+        <a href="what-is-web-development.html">
+            Web Development
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html" class="nav-button">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+
+<!-- =================================
+     PAGE INTRO
+================================== -->
+
+<section class="page-hero">
+
+    <span class="page-label">
+        About Me
+    </span>
+
+    <h1>
+        Meet Miracle Emmanuel
+    </h1>
+
+    <p>
+        Web developer, writer, motivational speaker and
+        digital skills coach passionate about technology,
+        creativity, learning and personal growth.
+    </p>
+
+</section>
+
+
+
+<!-- =================================
+     MAIN CONTENT
+================================== -->
+
+<main class="about-container">
+
+
+    <!-- PROFILE -->
+
+    <section class="profile-section">
+
+        <div class="profile-image">
+
+            <img
+                src="https://i.postimg.cc/qq6fQynF/unnamed-(2)-(7)-(1).jpg"
+                alt="Miracle Emmanuel"
+            >
+
+        </div>
+
+
+        <div class="profile-content">
+
+            <h2>
+                Miracle Emmanuel
+            </h2>
+
+            <div class="profile-title">
+                Web Developer • Writer • Coach • Speaker
+            </div>
+
+            <p>
+                My name is <strong>Miracle Emmanuel</strong>.
+                I am a web developer and digital creator
+                passionate about using technology and
+                creativity to build useful things.
+            </p>
+
+            <p>
+                I am also a motivational speaker, writer,
+                web development coach and WAPAXO social
+                media development expert.
+            </p>
+
+            <p>
+                I created this blog to share knowledge,
+                experiences, tutorials and ideas that can
+                help people learn, build and grow.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MY STORY -->
+
+    <section class="content-section">
+
+        <h2>
+            My Journey
+        </h2>
+
+        <p>
+            My journey into web development has been driven
+            by curiosity, creativity and a desire to understand
+            how websites and online platforms are built.
+        </p>
+
+        <p>
+            As I continued learning and building projects,
+            web development became more than just a technical
+            skill for me. It became a way to turn ideas into
+            something people can actually use.
+        </p>
+
+        <p>
+            I have worked on different web projects and have
+            developed experience with the WAPAXO platform,
+            including the development and customization of
+            social-media-style websites.
+        </p>
+
+        <p>
+            I also enjoy teaching beginners. I believe that
+            technology becomes easier to understand when
+            complicated ideas are broken down into simple,
+            practical steps.
+        </p>
+
+    </section>
+
+
+
+    <!-- WHAT I DO -->
+
+    <section class="content-section">
+
+        <h2>
+            What I Do
+        </h2>
+
+        <p>
+            My interests and areas of work cover several
+            aspects of technology, digital creativity and
+            personal development.
+        </p>
+
+
+        <div class="expertise-grid">
+
+
+            <div class="expertise">
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    Building websites and learning modern
+                    techniques for creating useful web
+                    experiences.
+                </p>
+
+            </div>
+
+
+            <div class="expertise">
+
+                <h3>
+                    Web Development Coaching
+                </h3>
+
+                <p>
+                    Helping beginners understand web
+                    development through simple explanations
+                    and practical examples.
+                </p>
+
+            </div>
+
+
+            <div class="expertise">
+
+                <h3>
+                    WAPAXO Development
+                </h3>
+
+                <p>
+                    Developing and customizing social-media
+                    experiences and websites using WAPAXO.
+                </p>
+
+            </div>
+
+
+            <div class="expertise">
+
+                <h3>
+                    SEO
+                </h3>
+
+                <p>
+                    Studying and applying search engine
+                    optimization techniques to help useful
+                    content become easier to discover.
+                </p>
+
+            </div>
+
+
+            <div class="expertise">
+
+                <h3>
+                    Writing
+                </h3>
+
+                <p>
+                    Creating educational, technological and
+                    motivational content for readers.
+                </p>
+
+            </div>
+
+
+            <div class="expertise">
+
+                <h3>
+                    Motivational Speaking
+                </h3>
+
+                <p>
+                    Sharing ideas about growth, purpose,
+                    creativity, discipline and personal
+                    development.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- BLOG -->
+
+    <section class="content-section">
+
+        <h2>
+            Why I Created This Blog
+        </h2>
+
+        <p>
+            The internet contains an enormous amount of
+            information, but beginners can sometimes find
+            it difficult to know where to start.
+        </p>
+
+        <p>
+            Through this blog, I want to make technology
+            and web development easier to understand by
+            sharing straightforward explanations,
+            practical tutorials and lessons from my own
+            experiences.
+        </p>
+
+        <p>
+            I will also write about SEO, digital skills,
+            technology, motivation, creativity and lessons
+            I discover along my journey.
+        </p>
+
+    </section>
+
+
+
+    <!-- MISSION -->
+
+    <section class="mission">
+
+        <h2>
+            Learn. Build. Become More.
+        </h2>
+
+        <p>
+            My goal is simple: to keep learning, keep
+            building and share what I learn with others.
+            I believe that knowledge becomes more valuable
+            when it is used to help someone else grow.
+        </p>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =================================
+     FOOTER
+================================== -->
+
+<footer>
+
+<div class="footer-inner">
+
+
+    <div class="footer-brand">
+
+        <h2>
+            Miracle<span>.</span>
+        </h2>
+
+        <p>
+            The personal blog of Miracle Emmanuel —
+            sharing knowledge about web development,
+            technology, SEO, digital skills, motivation
+            and personal growth.
+        </p>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            Explore
+        </h3>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="blogs.html">
+            Blog
+        </a>
+
+        <a href="what-is-web-development.html">
+            What Is Web Development?
+        </a>
+
+        <a href="about.html">
+            About Me
+        </a>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            Important Links
+        </h3>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <a href="privacy-policy.html">
+            Privacy Policy
+        </a>
+
+        <a href="terms-of-service.html">
+            Terms of Service
+        </a>
+
+        <a href="disclaimer.html">
+            Disclaimer
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<div class="copyright">
+
+    © 2026 Miracle Emmanuel.
+    All rights reserved.
+
+</div>
+
+</footer>
+
+
+</body>
+  </html>
