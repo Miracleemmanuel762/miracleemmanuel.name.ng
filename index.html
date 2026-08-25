@@ -3,282 +3,876 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miracle Emmanuel | Premium Web Infrastructure Architect</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7258532583176540"
-     crossorigin="anonymous"></script>
+
+    <title>Miracle Emmanuel | Web Developer, Writer & SEO Expert</title>
+
+    <meta name="description" content="Official website of Miracle Emmanuel — web developer, motivational speaker, WAPAXO social media development expert, web development coach, writer and SEO expert.">
+    <meta name="keywords" content="Miracle Emmanuel, web developer, web development, SEO expert, motivational speaker, WAPAXO, web development coach, technology blog">
+    <meta name="author" content="Miracle Emmanuel">
+
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Miracle Emmanuel | Web Developer & Digital Creator">
+    <meta property="og:description" content="Explore web development, technology, motivation, SEO and digital skills with Miracle Emmanuel.">
+    <meta property="og:image" content="https://i.postimg.cc/qq6fQynF/unnamed-(2)-(7)-(1).jpg">
+    <meta property="og:type" content="website">
+
     <style>
-        /* --- Master Deep Purple Theme Palette --- */
-        :root {
-            --bg-deep-obsidian: #06030d;
-            --bg-card: #0e091f;
-            --accent-purple: #9d4edf;
-            --accent-gold: #d4af37;
-            --text-white: #ffffff;
-            --text-muted: #b3a9c9;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-deep-obsidian);
-            color: var(--text-white);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f9fc;
+            color: #172033;
+            line-height: 1.7;
         }
 
-        /* --- Hero Section --- */
-        .gm-hero {
-            padding: 100px 24px;
-            text-align: center;
-            background: radial-gradient(circle at top, rgba(157, 78, 223, 0.15), transparent 60%);
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-        .hero-avatar-frame {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            border: 3px solid var(--accent-gold);
-            margin: 0 auto 24px auto;
-            overflow: hidden;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            background: rgba(255,255,255,0.96);
+            border-bottom: 1px solid #e8ecf3;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
         }
 
-        .hero-avatar-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .nav {
+            max-width: 1150px;
+            margin: auto;
+            min-height: 72px;
+            padding: 0 20px;
 
-        .gm-hero h1 {
-            font-size: 3rem;
-            margin: 0 0 16px 0;
-            letter-spacing: -1px;
-            font-weight: 800;
-        }
-
-        .gm-hero h1 span {
-            color: var(--accent-gold);
-        }
-
-        .gm-hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 32px auto;
-            line-height: 1.6;
-        }
-
-        .hero-btn-group {
             display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
-        .btn-prime {
-            background: var(--accent-gold);
-            color: #000;
-            text-decoration: none;
-            padding: 14px 28px;
-            font-weight: 700;
-            border-radius: 6px;
-            transition: all 0.2s ease;
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #111827;
         }
 
-        .btn-prime:hover {
-            background: #f1c40f;
-            transform: translateY(-2px);
+        .logo span {
+            color: #2563eb;
         }
 
-        .btn-sub {
-            background: rgba(157, 78, 223, 0.1);
-            color: var(--text-white);
-            border: 1px solid rgba(157, 78, 223, 0.4);
-            text-decoration: none;
-            padding: 14px 28px;
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
             font-weight: 600;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-        }
-just
-        .btn-sub:hover {
-            background: rgba(157, 78, 223, 0.25);
-            border-color: var(--accent-purple);
-            transform: translateY(-2px);
+            color: #4b5563;
+            transition: 0.25s;
         }
 
-        /* --- Section Styling --- */
-        .gm-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 24px;
+        .nav-links a:hover {
+            color: #2563eb;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 48px;
-            position: relative;
-        }
-
-        .section-title span {
-            color: var(--accent-purple);
-        }
-
-        /* --- Architecture Tiers Grid --- */
-        .tiers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .tier-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(157, 78, 223, 0.15);
+        .nav-button {
+            background: #2563eb;
+            color: white !important;
+            padding: 10px 17px;
             border-radius: 8px;
-            padding: 32px;
-            transition: all 0.3s ease;
         }
 
-        .tier-card:hover {
-            border-color: var(--accent-gold);
-            transform: translateY(-5px);
+        .nav-button:hover {
+            background: #1d4ed8;
         }
 
-        .tier-card h3 {
-            font-size: 1.5rem;
-            margin: 0 0 8px 0;
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            max-width: 1150px;
+            margin: auto;
+            padding: 85px 20px 70px;
+
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: center;
+            gap: 60px;
         }
 
-        .tier-price {
-            font-size: 1.8rem;
-            color: var(--accent-gold);
+        .hero-label {
+            display: inline-block;
+            padding: 7px 13px;
+            background: #eaf2ff;
+            color: #2563eb;
+            border-radius: 50px;
+            font-size: 13px;
             font-weight: 700;
             margin-bottom: 20px;
         }
 
-        .tier-card ul {
-            padding-left: 20px;
-            color: var(--text-muted);
-            line-height: 1.8;
-            margin-bottom: 24px;
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1.05;
+            letter-spacing: -2.5px;
+            margin-bottom: 22px;
+            color: #111827;
         }
 
-        /* --- Academy Callout Section --- */
-        .academy-banner {
-            background: linear-gradient(135deg, #130a29 0%, #06030d 100%);
-            border: 1px solid rgba(157, 78, 223, 0.3);
-            border-radius: 12px;
-            padding: 48px;
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+        .hero-text {
+            max-width: 650px;
+            color: #5b6473;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 32px;
             flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .academy-text h2 {
-            font-size: 2rem;
-            margin: 0 0 12px 0;
+        .primary-btn,
+        .secondary-btn {
+            display: inline-block;
+            padding: 13px 21px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.25s;
         }
 
-        .academy-text p {
-            color: var(--text-muted);
-            margin: 0;
-            max-width: 600px;
+        .primary-btn {
+            background: #2563eb;
+            color: white;
         }
 
-        /* --- Footer Statement --- */
-        .gm-footer {
+        .primary-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            background: white;
+            color: #172033;
+            border: 1px solid #dce2eb;
+        }
+
+        .secondary-btn:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        /* =========================
+           PROFILE CARD
+        ========================== */
+
+        .profile-area {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-card {
+            width: 100%;
+            max-width: 370px;
+            background: white;
+            border: 1px solid #e6eaf0;
+            border-radius: 20px;
+            padding: 28px;
             text-align: center;
-            padding: 40px 24px;
-            border-top: 1px solid rgba(157, 78, 223, 0.15);
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            box-shadow: 0 20px 50px rgba(17,24,39,0.08);
         }
 
-        /* --- Responsive Viewports --- */
-        @media (max-width: 768px) {
-            .gm-hero h1 { font-size: 2.2rem; }
-            .academy-banner { text-align: center; justify-content: center; padding: 32px 20px; }
+        .profile-card img {
+            width: 165px;
+            height: 165px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #eef4ff;
+            margin-bottom: 18px;
+        }
+
+        .profile-card h2 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .profile-card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .profile-tag {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 7px 12px;
+            background: #f1f5f9;
+            border-radius: 7px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #475569;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .section {
+            padding: 75px 20px;
+        }
+
+        .section-inner {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .section-heading small {
+            color: #2563eb;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 12px;
+        }
+
+        .section-heading h2 {
+            font-size: 35px;
+            margin: 8px 0 10px;
+            color: #111827;
+        }
+
+        .section-heading p {
+            color: #6b7280;
+        }
+
+        .about-box {
+            background: white;
+            border: 1px solid #e6eaf0;
+            border-radius: 16px;
+            padding: 35px;
+        }
+
+        .about-box p {
+            color: #555f70;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           EXPERTISE
+        ========================== */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill {
+            background: white;
+            border: 1px solid #e6eaf0;
+            border-radius: 14px;
+            padding: 25px;
+            transition: 0.25s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+        }
+
+        .skill-number {
+            font-size: 12px;
+            font-weight: 800;
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        .skill h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* =========================
+           BLOG PREVIEW
+        ========================== */
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .blog-card {
+            background: white;
+            border: 1px solid #e6eaf0;
+            border-radius: 15px;
+            padding: 28px;
+            transition: 0.25s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+        }
+
+        .blog-label {
+            color: #2563eb;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .blog-card h3 {
+            font-size: 21px;
+            margin: 10px 0;
+        }
+
+        .blog-card p {
+            color: #687385;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .read-more {
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta {
+            max-width: 1050px;
+            margin: auto;
+            background: #111827;
+            color: white;
+            border-radius: 18px;
+            padding: 50px 35px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: #cbd5e1;
+        }
+
+        .cta a {
+            display: inline-block;
+            background: white;
+            color: #111827;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            margin-top: 70px;
+            background: #111827;
+            color: white;
+        }
+
+        .footer-inner {
+            max-width: 1150px;
+            margin: auto;
+            padding: 55px 20px 25px;
+
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .footer-brand h2 span {
+            color: #60a5fa;
+        }
+
+        .footer-brand p {
+            color: #9ca3af;
+            max-width: 390px;
+            font-size: 14px;
+        }
+
+        .footer-column h3 {
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #9ca3af;
+            font-size: 14px;
+            margin-bottom: 8px;
+            transition: 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 20px;
+            border-top: 1px solid #273244;
+            color: #8b95a5;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .nav {
+                min-height: auto;
+                padding-top: 16px;
+                padding-bottom: 16px;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .nav-button {
+                padding: 8px 12px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 55px;
+                text-align: center;
+            }
+
+            .hero-text {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .logo {
+                font-size: 17px;
+            }
+
+            .nav {
+                gap: 10px;
+            }
+
+            .nav-links {
+                gap: 8px;
+            }
+
+            .nav-links a:nth-child(3),
+            .nav-links a:nth-child(4) {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .profile-card {
+                padding: 22px;
+            }
+
+            .section {
+                padding: 55px 15px;
+            }
+
+            .about-box {
+                padding: 25px;
+            }
+
+            .cta {
+                padding: 40px 22px;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div id="main-header"></div>
 
-    <script src="header-loader.js"></script>
+<!-- =====================================================
+     HEADER
+====================================================== -->
 
-    <section class="gm-hero">
-        <div class="hero-avatar-frame">
-            <img src="https://i.postimg.cc/jjGPfvqs/unnamed-(2)-(7)-(1).jpg" alt="Miracle Emmanuel">
-        </div>
-        <h1>Architecting <span>Premium Digital Assets</span></h1>
-        <p>Deploying elite, unbreachable, and lightning-fast web infrastructure on the modern Netlify Cloud system. Settle for nothing less than absolute digital authority.</p>
-        <div class="hero-btn-group">
-            <a href="https://global-media-development.netlify.app/order.html" class="btn-prime"><i class="fa-solid fa-layer-group"></i> Order Web Architecture</a>
-            <a href="web.html" class="btn-sub"><i class="fa-solid fa-graduation-cap"></i> Join the Masterclass ($10)</a>
-        </div>
-    </section>
+<header>
+    <nav class="nav">
 
-    <section class="gm-section">
-        <h2 class="section-title">Development <span>Tiers</span></h2>
-        <div class="tiers-grid">
-            
-            <div class="tier-card">
-                <h3>Core Showcase</h3>
-                <div class="tier-price">₦15,000</div>
-                <ul>
-                    <li>1 to 3 Responsive Layouts</li>
-                    <li>Designed for Freelancers & Specialists</li>
-                    <li>Direct Lead Generation Setup</li>
-                    <li>Netlify CDN Deployment</li>
-                </ul>
-                <a href="https://global-media-development.netlify.app/order.html" class="btn-sub" style="display:block; text-align:center;">Select Core</a>
-            </div>
+        <a href="index.html" class="logo">
+            Miracle<span>.</span>
+        </a>
 
-            <div class="tier-card">
-                <h3>Corporate Hub</h3>
-                <div class="tier-price">₦25,000</div>
-                <ul>
-                    <li>Full Information Engine Setup</li>
-                    <li>Perfect for Schools, Churches, & NGOs</li>
-                    <li>Announcement & Media Feeds Embedded</li>
-                    <li>Complete Handover Packet</li>
-                </ul>
-                <a href="https://global-media-development.netlify.app/order.html" class="btn-sub" style="display:block; text-align:center;">Select Hub</a>
-            </div>
+        <div class="nav-links">
 
-            <div class="tier-card">
-                <h3>Enterprise Engine</h3>
-                <div class="tier-price">₦50,000</div>
-                <ul>
-                    <li>Advanced E-commerce Frameworks</li>
-                    <li>Dynamic Wallet Parameters</li>
-                    <li>Flutterwave Payment Gateways</li>
-                    <li>Custom Database Core Routing</li>
-                </ul>
-                <a href="https://global-media-development.netlify.app/order.html" class="btn-prime" style="display:block; text-align:center;">Select Enterprise</a>
-            </div>
+            <a href="index.html">Home</a>
+
+            <a href="blogs.html">Blog</a>
+
+            <a href="what-is-web-development.html">
+                Web Development
+            </a>
+
+            <a href="#about">About</a>
+
+            <a href="contact.html" class="nav-button">
+                Contact
+            </a>
 
         </div>
-    </section>
 
-    <section class="gm-section">
-        <div class="academy-banner">
-            <div class="academy-text">
-                <h2>Miracle Emmanuel Academy 🚀</h2>
-                <p>Learn Web engineering from the ground up for just $10. Master HTML, CSS,  and advanced cloud deployments straight from your mobile device or PC.</p>
-            </div>
-            <a href="web.html" class="btn-prime">Secure Your Seat</a>
+    </nav>
+</header>
+
+
+<!-- =====================================================
+     HERO SECTION
+====================================================== -->
+
+<main>
+
+<section class="hero">
+
+    <div>
+
+        <span class="hero-label">
+            WEB • TECHNOLOGY • GROWTH
+        </span>
+
+        <h1>
+            Learn. Build.<br>
+            <span>Become More.</span>
+        </h1>
+
+        <p class="hero-text">
+            Welcome to the official blog of Miracle Emmanuel —
+            a web developer, motivational speaker, writer and
+            digital skills coach sharing practical knowledge,
+            ideas and experiences to help you grow.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="blogs.html" class="primary-btn">
+                Explore My Blog →
+            </a>
+
+            <a href="what-is-web-development.html"
+               class="secondary-btn">
+                Start Learning Web Development
+            </a>
+
         </div>
-    </section>
 
-    <footer class="gm-footer">
-        <p>Although it is God all the way, we are completely relentless in executing absolute technical perfection.</p>
-        <p style="font-size: 0.8rem; margin-top: 16px;">&copy; 2026 Miracle Emmanuel. Driven by the GlobalMedia Team.</p>
-    </footer>
+    </div>
 
-</body>
-    </html>
+
+    <div class="profile-area">
+
+        <div class="profile-card">
+
+            <img
+                src="https://i.postimg.cc/qq6fQynF/unnamed-(2)-(7)-(1).jpg"
+                alt="Miracle Emmanuel"
+            >
+
+            <h2>Miracle Emmanuel</h2>
+
+            <p>
+                Web Developer • Writer • Coach
+            </p>
+
+            <span class="profile-tag">
+                Building • Teaching • Inspiring
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+====================================================== -->
+
+<section class="section" id="about">
+
+    <div class="section-inner">
+
+        <div class="section-heading">
+
+            <small>About Me</small>
+
+            <h2>Technology, Creativity & Growth</h2>
+
+            <p>
+                A little about who I am and what I do.
+            </p>
+
+        </div>
+
+        <div class="about-box">
+
+            <p>
+                My name is <strong>Miracle Emmanuel</strong>.
+                I am a web developer, motivational speaker,
+                writer and digital skills coach passionate about
+                technology, personal development and helping
+                people discover what they can create.
+            </p>
+
+            <p>
+                I am also a <strong>WAPAXO social media development
+                expert</strong>, with experience creating and
+                developing social platforms and web-based projects.
+            </p>
+
+            <p>
+                Through this blog, I share what I learn and create —
+                from web development and SEO to technology,
+                digital skills, personal growth and lessons from
+                my journey as a developer and creator.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERTISE
+====================================================== -->
+
+<section class="section">
+
+    <div class="section-inner">
+
+        <div class="section-heading">
+
+            <small>What I Do</small>
+
+            <h2>My Areas of Expertise</h2>
+
+            <p>
+                Areas I actively learn, practice, teach and write about.
+            </p>
+
+        </div>
+
+
+        <div class="skills">
+
+            <div class="skill">
+
+                <div class="skill-number">01</div>
+
+                <h3>Web Development</h3>
+
+                <p>
+                    Creating websites and exploring modern
+                    approaches to building useful web experiences.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-number">02</div>
+
+                <h3>SEO</h3>
+
+                <p>
+                    Learning and applying search engine
+                    optimization strategies to make useful
+                    content easier to discover.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-number">03</div>
+
+                <h3>Web Development Coaching</h3>
+
+                <p>
+                    Helping beginners understand the foundations
+                    of web development in a simple and practical way.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-number">04</div>
+
+                <h3>Writing</h3>
+
+                <p>
+                    Writing educational, technological and
+                    motivational content designed to inform and inspire.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-number">05</div>
+
+                <h3>Motivational Speaking</h3>
+
+                <p>
+                    Sharing ideas about growth, purpose,
+                    creativity, discipline and personal development.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-number">06</div>
+
+                <h3>WAPAXO Development</h3>
+
+                <p>
+                    Building and customizing social-media-style
+                    web experiences using the WAPAXO platform.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURED BLOG
+====================================================== -->
+
+<section class="section">
+
+    <div class="section-inner">
+
+        <div class="section-heading">
+
+            <small>From The Blog</small>
+
+            <h2>Start Learning</h2>
+
+            <p>
+                Explore practical articles written for beginners
+                and curious creators.
+            </p>
+
+        </div>
+
+
+        <div class="blog-grid">
+
+            <article class="blog-card">
+
+                <span class="blog-label">
+                    Web Development
+                </span>
+
+                <h3>
+                    What Is Web Development?
+                </h3>
+
+                <p>
+                    A simple beginner-friendly explanation of
+                    web development, how websites are created,
+                    and where beginners can start.
+                </p>
+
+                <a
+                    href="what-is-web-
