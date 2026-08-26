@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>How I Became a Web Developer | Miracle Emmanuel</title>
+
+<meta name="description"
+content="The story of how Miracle Emmanuel became a web developer, starting with Wapaxo and a keypad phone, learning HTML and CSS, building GmChat, and eventually moving to modern web development.">
+
+<meta name="keywords"
+content="How I became a web developer, Miracle Emmanuel, web developer Nigeria, Wapaxo developer, GmChat, web development journey, frontend developer">
+
+<meta name="author" content="Miracle Emmanuel">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical"
+href="https://miracleemmanuel.name.ng/how-i-became-a-web-developer.html">
+
+
+<!-- Open Graph -->
+
+<meta property="og:title"
+content="How I Became a Web Developer | Miracle Emmanuel">
+
+<meta property="og:description"
+content="The personal story of Miracle Emmanuel's journey from a complete beginner to a web developer.">
+
+<meta property="og:type"
+content="article">
+
+<meta property="og:url"
+content="https://miracleemmanuel.name.ng/how-i-became-a-web-developer.html">
+
+<meta property="og:image"
+content="https://i.postimg.cc/qq6fQynF/unnamed-(2)-(7)-(1).jpg">
+
+<meta property="og:site_name"
+content="Miracle Emmanuel">
+
+
+<!-- Twitter -->
+
+<meta name="twitter:card"
+content="summary_large_image">
+
+<meta name="twitter:title"
+content="How I Became a Web Developer | Miracle Emmanuel">
+
+<meta name="twitter:description"
+content="The story behind Miracle Emmanuel's journey into web development.">
+
+<meta name="twitter:image"
+content="https://i.postimg.cc/qq6fQynF/unnamed-(2)-(7)-(1).jpg">
+
+
+<style>
+
+/* =====================================
+   GLOBAL
+===================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f9fc;
+    color: #172033;
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+header {
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid #e6eaf0;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+}
+
+.nav {
+    max-width: 1150px;
+    margin: auto;
+
+    min-height: 72px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b5563;
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.nav-button {
+    background: #2563eb;
+    color: white !important;
+
+    padding: 10px 17px;
+    border-radius: 8px;
+}
+
+
+/* =====================================
+   ARTICLE HERO
+===================================== */
+
+.article-hero {
+    max-width: 950px;
+    margin: auto;
+
+    padding: 75px 20px 40px;
+
+    text-align: center;
+}
+
+.article-category {
+    display: inline-block;
+
+    background: #eaf2ff;
+    color: #2563eb;
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+}
+
+.article-hero h1 {
+    max-width: 850px;
+    margin: auto;
+
+    color: #111827;
+
+    font-size: clamp(40px, 6vw, 64px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2.5px;
+
+    margin-bottom: 20px;
+}
+
+.article-intro {
+    max-width: 750px;
+    margin: auto;
+
+    color: #667085;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   ARTICLE META
+===================================== */
+
+.article-meta {
+    max-width: 750px;
+    margin: 28px auto 0;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    color: #7b8494;
+
+    font-size: 13px;
+}
+
+.article-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+/* =====================================
+   AUTHOR
+===================================== */
+
+.author-box {
+    max-width: 850px;
+    margin: 35px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.author-box img {
+    width: 42px;
+    height: 42px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid #eaf2ff;
+}
+
+.author-info {
+    text-align: left;
+}
+
+.author-info strong {
+    display: block;
+
+    color: #172033;
+
+    font-size: 14px;
+}
+
+.author-info span {
+    display: block;
+
+    color: #7b8494;
+
+    font-size: 12px;
+}
+
+
+/* =====================================
+   ARTICLE LAYOUT
+===================================== */
+
+.article-wrapper {
+    max-width: 1100px;
+    margin: auto;
+
+    padding: 25px 20px 70px;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 760px) 260px;
+
+    gap: 45px;
+
+    align-items: start;
+}
+
+
+/* =====================================
+   ARTICLE CONTENT
+===================================== */
+
+.article-content {
+    background: white;
+
+    border: 1px solid #e5e9f0;
+
+    border-radius: 18px;
+
+    padding: 45px;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.04);
+}
+
+.article-content p {
+    color: #4f5b6e;
+
+    font-size: 16px;
+
+    margin-bottom: 22px;
+}
+
+.article-content h2 {
+    color: #111827;
+
+    font-size: 29px;
+
+    line-height: 1.3;
+
+    margin-top: 45px;
+
+    margin-bottom: 17px;
+}
+
+.article-content h2:first-child {
+    margin-top: 0;
+}
+
+.article-content strong {
+    color: #172033;
+}
+
+.article-content em {
+    color: #2563eb;
+}
+
+
+/* =====================================
+   SPECIAL QUOTE
+===================================== */
+
+.quote-box {
+    margin: 35px 0;
+
+    padding: 25px 28px;
+
+    background: #f1f5f9;
+
+    border-left: 4px solid #2563eb;
+
+    border-radius: 8px;
+}
+
+.quote-box p {
+    margin: 0;
+
+    color: #263247;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================
+   STORY LIST
+===================================== */
+
+.story-list {
+    margin: 20px 0 25px 20px;
+}
+
+.story-list li {
+    color: #4f5b6e;
+
+    margin-bottom: 8px;
+
+    padding-left: 5px;
+}
+
+
+/* =====================================
+   MILESTONE BOX
+===================================== */
+
+.milestone {
+    margin: 30px 0;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e9f0;
+
+    border-radius: 12px;
+
+    padding: 22px 25px;
+}
+
+.milestone strong {
+    display: block;
+
+    color: #2563eb;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+.milestone p {
+    margin: 0;
+}
+
+
+/* =====================================
+   ENDING
+===================================== */
+
+.article-ending {
+    margin-top: 45px;
+
+    padding: 30px;
+
+    background: #111827;
+
+    border-radius: 14px;
+
+    color: white;
+}
+
+.article-ending h2 {
+    color: white;
+
+    margin: 0 0 12px;
+
+    font-size: 28px;
+}
+
+.article-ending p {
+    color: #cbd5e1;
+
+    margin: 0;
+}
+
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.article-sidebar {
+    position: sticky;
+
+    top: 95px;
+}
+
+.sidebar-card {
+    background: white;
+
+    border: 1px solid #e5e9f0;
+
+    border-radius: 14px;
+
+    padding: 23px;
+
+    margin-bottom: 18px;
+}
+
+.sidebar-card h3 {
+    font-size: 15px;
+
+    color: #111827;
+
+    margin-bottom: 15px;
+}
+
+.sidebar-card a {
+    display: block;
+
+    color: #687385;
+
+    font-size: 13px;
+
+    padding: 7px 0;
+
+    transition: 0.2s;
+}
+
+.sidebar-card a:hover {
+    color: #2563eb;
+}
+
+.sidebar-author {
+    text-align: center;
+}
+
+.sidebar-author img {
+    width: 85px;
+    height: 85px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 4px solid #eef4ff;
+
+    margin-bottom: 10px;
+}
+
+.sidebar-author h3 {
+    margin-bottom: 4px;
+}
+
+.sidebar-author p {
+    color: #778196;
+
+    font-size: 13px;
+}
+
+
+/* =====================================
+   BACK TO BLOG
+===================================== */
+
+.back-blog {
+    max-width: 760px;
+    margin: 0 auto 70px;
+
+    padding: 0 20px;
+}
+
+.back-blog a {
+    display: inline-block;
+
+    background: white;
+
+    border: 1px solid #dce2eb;
+
+    color: #2563eb;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    transition: 0.25s;
+}
+
+.back-blog a:hover {
+    background: #2563eb;
+    color: white;
+
+    border-color: #2563eb;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    margin-top: 0;
+
+    background: #111827;
+
+    color: white;
+}
+
+.footer-inner {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 55px 20px 25px;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    gap: 40px;
+}
+
+.footer-brand h2 {
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.footer-brand h2 span {
+    color: #60a5fa;
+}
+
+.footer-brand p {
+    color: #9ca3af;
+
+    max-width: 390px;
+
+    font-size: 14px;
+}
+
+.footer-column h3 {
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    display: block;
+
+    color: #9ca3af;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+
+    transition: 0.2s;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.copyright {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 18px 20px;
+
+    border-top: 1px solid #273244;
+
+    color: #8b95a5;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 900px) {
+
+    .article-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .article-sidebar {
+        position: static;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 18px;
+    }
+
+    .sidebar-card {
+        margin-bottom: 0;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .nav {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .nav-links {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: flex-end;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .article-content {
+        padding: 32px 25px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .article-hero {
+        padding-top: 50px;
+    }
+
+    .article-hero h1 {
+        letter-spacing: -1.5px;
+    }
+
+    .article-wrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .article-content {
+        padding: 28px 20px;
+    }
+
+    .article-content h2 {
+        font-size: 25px;
+    }
+
+    .article-content p {
+        font-size: 15px;
+    }
+
+    .article-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a:nth-child(3),
+    .nav-links a:nth-child(4) {
+        display: none;
+    }
+
+    .author-box {
+        justify-content: flex-start;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header>
+
+<nav class="nav">
+
+    <a href="index.html" class="logo">
+        Miracle<span>.</span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="blogs.html">
+            Blog
+        </a>
+
+        <a href="what-is-web-development.html">
+            Web Development
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html" class="nav-button">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+<!-- =====================================
+     ARTICLE HERO
+===================================== -->
+
+<section class="article-hero">
+
+    <span class="article-category">
+        My Journey
+    </span>
+
+    <h1>
+        How I Became a Web Developer
+    </h1>
+
+    <p class="article-intro">
+        From browsing the internet with my mum's keypad phone
+        to building websites, learning WAPAXO development,
+        creating GmChat and moving into modern web development —
+        this is the story behind my journey.
+    </p>
+
+    <div class="article-meta">
+
+        <span>By Miracle Emmanuel</span>
+
+        <span>•</span>
+
+        <span>August 2026</span>
+
+        <span>•</span>
+
+        <span>8 min read</span>
+
+    </div>
+
+
+    <div class="author-box">
+
+        <img
+            src="https://i.postimg.cc/qq6fQynF/unnamed-(2)-(7)-(1).jpg"
+            alt="Miracle Emmanuel"
+        >
+
+        <div class="author-info">
+
+            <strong>
+                Miracle Emmanuel
+            </strong>
+
+            <span>
+                Web Developer • Writer • Coach
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     ARTICLE
+===================================== -->
+
+<main class="article-wrapper">
+
+
+<!-- =====================================
+     MAIN ARTICLE
+===================================== -->
+
+<article class="article-content">
+
+
+    <p>
+        My name is <strong>Miracle Emmanuel</strong>, and I am
+        from Nigeria. By the special grace of God, I am a web
+        developer — a frontend developer, to be precise.
+    </p>
+
+    <p>
+        I started my web development journey around
+        <strong>July 2025</strong>, and at that time, I was a
+        complete novice.
+    </p>
+
+    <p>
+        I began my development journey with
+        <strong>Wapaxo.com</strong>, a free web-building and
+        hosting platform. I didn't even have a smartphone at
+        the time. I had to start everything with my mum's
+        keypad phone.
+    </p>
+
+
+    <h2>
+        How I Started
+    </h2>
+
+    <p>
+        I was browsing the internet with my mum's keypad phone
+        when I came across a few mobile social media sites.
+        They looked really good, and I became interested in
+        how they were built.
+    </p>
+
+    <p>
+        I kept browsing until I came across a post from one of
+        the developers about his social media site appearing
+        on Google.
+    </p>
+
+    <p>
+        I searched for it on Google, and surprisingly, it was
+        the first result that appeared in the search results.
+    </p>
+
+    <div class="quote-box">
+
+        <p>
+            "I was amazed. That moment motivated me to join
+            the movement."
+        </p>
+
+    </div>
+
+    <p>
+        But there was one major problem: I knew absolutely
+        nothing about web development.
+    </p>
+
+    <p>
+        I had to start with the system templates provided by
+        Wapaxo.com. That was how my journey began.
+    </p>
+
+    <p>
+        It was really challenging. I had no experience, no
+        skills, and no knowledge of web development. Still,
+        I kept going despite the difficulties.
+    </p>
+
+    <p>
+        I started researching HTML tags and CSS properties,
+        and that was how I gradually began to grow in web
+        development.
+    </p>
+
+
+    <div class="quote-box">
+
+        <p>
+            No teacher.<br>
+            No mentor.<br>
+            No tutor.<br>
+            No AI assistant.<br>
+            Just Google.
+        </p>
+
+    </div>
+
+
+    <h2>
+        My First Websites
+    </h2>
+
+    <p>
+        At some point, I created a site called
+        <strong>gmchat.wapaxo.com</strong>, which I intended
+        to turn into my own social media platform.
+    </p>
+
+    <p>
+        Wapaxo.com already had its own social media system,
+        where WAPAXO tags could be used alongside HTML and CSS.
+    </p>
+
+    <p>
+        However, I couldn't really build the site the way I
+        wanted because I wasn't familiar with WAPAXO tags.
+        Although Wapaxo provided a few tutorials in the admin
+        panel, they weren't even close to covering everything
+        I needed to know.
+    </p>
+
+    <p>
+        I remember building several websites around that
+        period.
+    </p>
+
+    <p>
+        Some were sports-betting blogs. That was also the
+        period when I became deeply involved in sports betting.
+        I was eager to make an impact in the sports-betting
+        space.
+    </p>
+
+    <p>
+        But funny enough, I was an extremely unprofitable
+        punter.
+    </p>
+
+    <p>
+        I spent almost a year betting on sporting events,
+        yet I couldn't withdraw even a dime.
+    </p>
+
+    <p>
+        That's a story for another day.
+    </p>
+
+    <p>
+        I also had a few guys who were learning from me at the
+        time, and they joined my sports-betting blog.
+        I had a gospel website too. Although it was never
+        fully completed, it was one of the websites I loved
+        the most.
+    </p>
+
+    <p>
+        However, I had a major problem:
+    </p>
+
+    <div class="milestone">
+
+        <strong>
+            A Lesson I Learned
+        </strong>
+
+        <p>
+            I created too many websites randomly without proper
+            planning, and I usually ended up abandoning them
+            before completing them.
+        </p>
+
+    </div>
+
+
+    <h2>
+        The Opportunity That Changed Everything
+    </h2>
+
+    <p>
+        Some junior developers started chatting with me after
+        seeing some of my work.
+    </p>
+
+    <p>
+        My work was still basic, but they were interested in
+        what I was doing.
+    </p>
+
+    <p>
+        At the time, some of them couldn't afford to connect
+        with me properly, but one of them eventually reached
+        out and asked me to help organize his social media
+        website.
+    </p>
+
+    <p>
+        I was extremely happy.
+    </p>
+
+    <p>
+        He gave me access to his Wapaxo.com admin panel and
+        Gmail account, and I was able to work on his website.
+    </p>
+
+    <p>
+        That opportunity became a major turning point for me.
+    </p>
+
+    <p>
+        It was during that process that I began to understand
+        how Wapaxo social media websites were actually being
+        built.
+    </p>
+
+    <p>
+        I discovered that many developers downloaded WAPAXO
+        social-media themes and uploaded them to their
+        websites. However, I couldn't properly access or
+        understand many of those themes at the time.
+    </p>
+
+    <p>
+        So I started learning by studying the codes, pages,
+        and structures I could access.
+    </p>
+
+    <p>
+        I discovered more WAPAXO tags, and gradually, I began
+        to understand how everything worked.
+    </p>
+
+    <p>
+        That knowledge brought me back to
+        <strong>gmchat.wapaxo.com</strong>, a project I had
+        abandoned for several months because of my lack of
+        experience and skills.
+    </p>
+
+    <p>
+        I started rebuilding it.
+    </p>
+
+
+    <h2>
+        The Birth of GmChat
+    </h2>
+
+    <p>
+        I learned almost every concept I needed to make the
+        platform work, and gradually, gmchat.wapaxo.com became
+        a reality.
+    </p>
+
+    <p>
+        Interestingly, the website I had been helping with
+        remained almost exactly as it was — with little or no
+        updates — while GmChat continued to grow.
+    </p>
+
+    <p>
+        Today, GmChat has more than
+        <strong>1,400 users</strong>, and it became one of the
+        rapidly growing social platforms on Wapaxo.
+    </p>
+
+    <p>
+        But the journey wasn't always beautiful.
+    </p>
+
+    <p>
+        There were times when the site looked boring because
+        I neglected it for a while.
+    </p>
+
+    <p>
+        Some users insulted me and called my social media site
+        all sorts of names. Some criticized the user interface
+        and user experience.
+    </p>
+
+    <p>
+        Others created additional accounts whenever their
+        previous accounts were banned for insults or abusive
+        behavior.
+    </p>
+
+    <p>
+        At some point, I became discouraged.
+  </p>
+      <p>
+        I felt like giving up because the insults were becoming
+        too much.
+    </p>
+
+    <p>
+        People insulted my creativity, but they didn't know the
+        secret, passion, sacrifices, and struggles behind the
+        reality they were criticizing.
+    </p>
+
+    <p>
+        That was one of the hardest parts of the journey.
+    </p>
+
+
+    <h2>
+        When People Started Noticing
+    </h2>
+
+    <p>
+        As I continued improving, people began chatting me up
+        about my mentorship services.
+    </p>
+
+    <p>
+        At first, nobody was paying me.
+    </p>
+
+    <p>
+        I decided to teach a few people the basics while
+        keeping the deeper fundamentals of my mentorship
+        available for those who were ready to pay for the
+        full training.
+    </p>
+
+    <p>
+        By that time, I had started building something more
+        important than just a website:
+    </p>
+
+    <div class="quote-box">
+
+        <p>
+            "I was building value."
+        </p>
+
+    </div>
+
+    <p>
+        People from other mobile communities began hearing
+        about GmChat.
+    </p>
+
+    <p>
+        Even today, some people in other communities know
+        about the platform.
+    </p>
+
+    <p>
+        There were even situations where administrators of
+        other websites blocked some of our officials from
+        registering because of their continuous advertisements
+        encouraging users to join GmChat.
+    </p>
+
+    <p>
+        That showed me that the platform had gained some level
+        of recognition.
+    </p>
+
+
+    <h2>
+        The Growth
+    </h2>
+
+    <p>
+        That was how I really started web development.
+        The story is long, but these experiences shaped me
+        into the developer I am becoming today.
+    </p>
+
+    <p>
+        I continued.
+    </p>
+
+    <p>
+        I kept learning.
+    </p>
+
+    <p>
+        I kept building.
+    </p>
+
+    <p>
+        I kept improving.
+    </p>
+
+    <p>
+        And I kept growing.
+    </p>
+
+    <div class="milestone">
+
+        <strong>
+            The Journey Continues
+        </strong>
+
+        <p>
+            Even today, I am still growing. I am still building.
+            I am still learning.
+        </p>
+
+    </div>
+
+    <p>
+        Learning never ends.
+    </p>
+
+    <p>
+        That has become part of my lifestyle — the lifestyle
+        of a determined, disciplined, and exceptional person.
+    </p>
+
+
+    <h2>
+        Moving to Modern Web Development
+    </h2>
+
+    <p>
+        Eventually, I moved from Wapaxo to Netlify, where I
+        became more familiar with modern web development.
+    </p>
+
+    <p>
+        I later moved to Vercel, and that is where I continue
+        my journey today.
+    </p>
+
+    <p>
+        My journey has been a great experience.
+    </p>
+
+    <p>
+        Although I no longer use Wapaxo.com as my primary
+        development platform, I will never forget what it
+        meant to me.
+    </p>
+
+    <div class="quote-box">
+
+        <p>
+            "Wapaxo was my humble beginning."
+        </p>
+
+    </div>
+
+    <p>
+        It was where I started learning.
+    </p>
+
+    <p>
+        It was where I made mistakes.
+    </p>
+
+    <p>
+        It was where I experimented.
+    </p>
+
+    <p>
+        It was where I discovered that I could actually
+        build things.
+    </p>
+
+    <p>
+        Neglecting or looking down on that beginning would
+        mean underestimating the foundation that helped shape
+        my prospects and potentials.
+    </p>
+
+    <p>
+        I may have moved on to modern platforms, but I will
+        always respect where I started.
+    </p>
+
+    <p>
+        Because sometimes, the platform where you begin is not
+        the platform where you will end.
+    </p>
+
+    <p>
+        But it may be the platform that gives you the courage
+        to begin.
+    </p>
+
+
+    <div class="article-ending">
+
+        <h2>
+            And the Journey Isn't Over
+        </h2>
+
+        <p>
+            And for me, that platform was Wapaxo.
+            This is how I became a web developer.
+            And the journey isn't over yet.
+        </p>
+
+    </div>
+
+</article>
+
+
+<!-- =====================================
+     SIDEBAR
+===================================== -->
+
+<aside class="article-sidebar">
+
+
+    <div class="sidebar-card sidebar-author">
+
+        <img
+            src="https://i.postimg.cc/qq6fQynF/unnamed-(2)-(7)-(1).jpg"
+            alt="Miracle Emmanuel"
+        >
+
+        <h3>
+            Miracle Emmanuel
+        </h3>
+
+        <p>
+            Web Developer, Writer, Coach,
+            Motivational Speaker & SEO Expert.
+        </p>
+
+    </div>
+
+
+    <div class="sidebar-card">
+
+        <h3>
+            Explore
+        </h3>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="blogs.html">
+            Blog
+        </a>
+
+        <a href="what-is-web-development.html">
+            What Is Web Development?
+        </a>
+
+        <a href="about.html">
+            About Me
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+
+    <div class="sidebar-card">
+
+        <h3>
+            Important Pages
+        </h3>
+
+        <a href="privacy-policy.html">
+            Privacy Policy
+        </a>
+
+        <a href="terms-of-service.html">
+            Terms of Service
+        </a>
+
+        <a href="disclaimer.html">
+            Disclaimer
+        </a>
+
+    </div>
+
+
+</aside>
+
+</main>
+
+
+<!-- =====================================
+     BACK TO BLOG
+===================================== -->
+
+<div class="back-blog">
+
+    <a href="blogs.html">
+        ← Back to Blog
+    </a>
+
+</div>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <div class="footer-inner">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                Miracle<span>.</span>
+            </h2>
+
+            <p>
+                The official website and blog of Miracle Emmanuel —
+                sharing knowledge about web development, technology,
+                SEO, digital skills, motivation and personal growth.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="blogs.html">
+                Blog
+            </a>
+
+            <a href="what-is-web-development.html">
+                Web Development
+            </a>
+
+            <a href="about.html">
+                About Me
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Legal
+            </h3>
+
+            <a href="privacy-policy.html">
+                Privacy Policy
+            </a>
+
+            <a href="terms-of-service.html">
+                Terms of Service
+            </a>
+
+            <a href="disclaimer.html">
+                Disclaimer
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Miracle Emmanuel. All rights reserved.
+
+    </div>
+
+</footer>
+
+
+</body>
+
+      </html>
