@@ -1,1 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blog | Miracle Emmanuel</title>
+
+<meta name="description"
+content="Read articles by Miracle Emmanuel about web development, HTML, technology, SEO, digital skills, personal growth and his journey as a developer.">
+
+<meta name="keywords"
+content="Miracle Emmanuel blog, web development blog, HTML basics, web development journey, SEO, technology blog, Nigeria web developer">
+
+<meta name="author" content="Miracle Emmanuel">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical"
+href="https://miracleemmanuel.name.ng/blogs.html">
+
+
+<!-- Open Graph -->
+
+<meta property="og:title"
+content="Blog | Miracle Emmanuel">
+
+<meta property="og:description"
+content="Explore practical articles about web development, technology, HTML, SEO, digital skills and personal growth.">
+
+<meta property="og:type"
+content="website">
+
+<meta property="og:url"
+content="https://miracleemmanuel.name.ng/blogs.html">
+
+<meta property="og:image"
+content="https://i.postimg.cc/qq6fQynF/unnamed-(2)-(7)-(1).jpg">
+
+<meta property="og:site_name"
+content="Miracle Emmanuel">
+
+
+<style>
+
+/* =====================================
+   GLOBAL
+===================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f9fc;
+    color: #172033;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+header {
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid #e6eaf0;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+}
+
+.nav {
+    max-width: 1150px;
+    margin: auto;
+
+    min-height: 72px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b5563;
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.nav-button {
+    background: #2563eb;
+    color: white !important;
+
+    padding: 10px 17px;
+    border-radius: 8px;
+}
+
+.nav-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* =====================================
+   PAGE HERO
+===================================== */
+
+.blog-hero {
+    max-width: 950px;
+    margin: auto;
+
+    padding: 85px 20px 60px;
+
+    text-align: center;
+}
+
+.blog-label {
+    display: inline-block;
+
+    background: #eaf2ff;
+    color: #2563eb;
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+}
+
+.blog-hero h1 {
+    color: #111827;
+
+    font-size: clamp(42px, 6vw, 64px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2.5px;
+
+    margin-bottom: 18px;
+}
+
+.blog-hero p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #667085;
+
+    font-size: 17px;
+}
+
+
+/* =====================================
+   BLOG SECTION
+===================================== */
+
+.blog-section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 20px 20px 80px;
+}
+
+
+/* =====================================
+   FEATURED ARTICLE
+===================================== */
+
+.featured-blog {
+    background: #111827;
+
+    color: white;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    margin-bottom: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.featured-blog::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(37,99,235,0.18);
+
+    right: -80px;
+    top: -80px;
+}
+
+.featured-label {
+    display: inline-block;
+
+    color: #93c5fd;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 13px;
+}
+
+.featured-blog h2 {
+    max-width: 750px;
+
+    font-size: 34px;
+
+    line-height: 1.25;
+
+    margin-bottom: 14px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.featured-blog p {
+    max-width: 700px;
+
+    color: #cbd5e1;
+
+    font-size: 15px;
+
+    margin-bottom: 24px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.featured-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    margin-bottom: 22px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.featured-button {
+    display: inline-block;
+
+    background: white;
+
+    color: #111827;
+
+    padding: 12px 19px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    position: relative;
+
+    z-index: 2;
+
+    transition: 0.25s;
+}
+
+.featured-button:hover {
+    background: #2563eb;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   BLOG GRID
+===================================== */
+
+.blog-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =====================================
+   BLOG CARD
+===================================== */
+
+.blog-card {
+    background: white;
+
+    border: 1px solid #e4e8ef;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    transition: 0.25s;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.07);
+
+    border-color: #d8e1ef;
+}
+
+.blog-category {
+    display: inline-block;
+
+    color: #2563eb;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+.blog-card h2 {
+    color: #111827;
+
+    font-size: 23px;
+
+    line-height: 1.35;
+
+    margin-bottom: 12px;
+}
+
+.blog-card p {
+    color: #687385;
+
+    font-size: 14px;
+
+    margin-bottom: 22px;
+}
+
+.blog-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    color: #8993a3;
+
+    font-size: 12px;
+
+    margin-bottom: 20px;
+}
+
+.read-more {
+    margin-top: auto;
+
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    transition: 0.2s;
+}
+
+.read-more:hover {
+    color: #1d4ed8;
+
+    transform: translateX(3px);
+}
+
+
+/* =====================================
+   COMING SOON
+===================================== */
+
+.blog-note {
+    margin-top: 30px;
+
+    background: white;
+
+    border: 1px solid #e5e9f0;
+
+    border-radius: 15px;
+
+    padding: 28px;
+
+    text-align: center;
+}
+
+.blog-note h3 {
+    color: #111827;
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.blog-note p {
+    color: #687385;
+
+    font-size: 14px;
+
+    max-width: 600px;
+
+    margin: auto;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    background: #111827;
+
+    color: white;
+}
+
+.footer-inner {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 55px 20px 25px;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    gap: 40px;
+}
+
+.footer-brand h2 {
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.footer-brand h2 span {
+    color: #60a5fa;
+}
+
+.footer-brand p {
+    color: #9ca3af;
+
+    max-width: 390px;
+
+    font-size: 14px;
+}
+
+.footer-column h3 {
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    display: block;
+
+    color: #9ca3af;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+
+    transition: 0.2s;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.copyright {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 18px 20px;
+
+    border-top: 1px solid #273244;
+
+    color: #8b95a5;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 800px) {
+
+    .nav {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .nav-links {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: flex-end;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .blog-hero {
+        padding-top: 60px;
+    }
+
+    .featured-blog {
+        padding: 30px 25px;
+    }
+
+    .featured-blog h2 {
+        font-size: 28px;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a:nth-child(3),
+    .nav-links a:nth-child(4) {
+        display: none;
+    }
+
+    .blog-hero {
+        padding: 50px 15px 45px;
+    }
+
+    .blog-hero h1 {
+        font-size: 43px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .blog-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .featured-blog {
+        padding: 28px 22px;
+    }
+
+    .featured-blog h2 {
+        font-size: 25px;
+    }
+
+    .blog-card {
+        padding: 25px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header>
+
+<nav class="nav">
+
+    <a href="index.html" class="logo">
+        Miracle<span>.</span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="blogs.html">
+            Blog
+        </a>
+
+        <a href="what-is-web-development.html">
+            Web Development
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html" class="nav-button">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+
+<!-- =====================================
+     BLOG HERO
+===================================== -->
+
+<section class="blog-hero">
+
+    <span class="blog-label">
+        Miracle Emmanuel's Blog
+    </span>
+
+    <h1>
+        Ideas, Knowledge & My Journey
+    </h1>
+
+    <p>
+        Welcome to my blog — a place where I share what I
+        learn, build and experience across web development,
+        technology, SEO, digital skills and personal growth.
+    </p>
+
+</section>
+
+
+
+<!-- =====================================
+     BLOG CONTENT
+===================================== -->
+
+<main class="blog-section">
+
+
+    <!-- FEATURED BLOG -->
+
+    <article class="featured-blog">
+
+        <span class="featured-label">
+            Featured Story
+        </span>
+
+        <h2>
+            How I Became a Web Developer
+        </h2>
+
+        <p>
+            From browsing the internet with my mum's keypad
+            phone to learning HTML and CSS, working with WAPAXO,
+            building GmChat and eventually moving to modern
+            web development — this is the story of my journey.
+        </p>
+
+        <div class="featured-meta">
+
+            <span>
+                By Miracle Emmanuel
+            </span>
+
+            <span>•</span>
+
+            <span>
+                August 2026
+            </span>
+
+            <span>•</span>
+
+            <span>
+                8 min read
+            </span>
+
+        </div>
+
+        <a
+            href="how-i-became-a-web-developer.html"
+            class="featured-button"
+        >
+            Read My Story →
+        </a>
+
+    </article>
+
+
+
+    <!-- BLOG GRID -->
+
+    <div class="blog-grid">
+
+
+        <!-- BLOG 1 -->
+
+        <article class="blog-card">
+
+            <span class="blog-category">
+                Web Development
+            </span>
+
+            <h2>
+                How I Became a Web Developer
+            </h2>
+
+            <p>
+                Discover the story behind my journey into web
+                development — from a keypad phone and Wapaxo
+                to building websites and growing as a developer.
+            </p>
+
+            <div class="blog-meta">
+
+                <span>
+                    Miracle Emmanuel
+                </span>
+
+                <span>•</span>
+
+                <span>
+                    8 min read
+                </span>
+
+            </div>
+
+            <a
+                href="how-i-became-a-web-developer.html"
+                class="read-more"
+            >
+                Read Article →
+            </a>
+
+        </article>
+
+
+
+        <!-- BLOG 2 -->
+
+        <article class="blog-card">
+
+            <span class="blog-category">
+                HTML
+            </span>
+
+            <h2>
+                HTML Basics
+            </h2>
+
+            <p>
+                Learn the basic concepts of HTML and understand
+                how HTML is used to structure webpages. A simple
+                starting point for anyone beginning web development.
+            </p>
+
+            <div class="blog-meta">
+
+                <span>
+                    Web Development
+                </span>
+
+                <span>•</span>
+
+                <span>
+                    Beginner
+                </span>
+
+            </div>
+
+            <a
+                href="html-basics.html"
+                class="read-more"
+            >
+                Read Article →
+            </a>
+
+        </article>
+
+
+
+        <!-- BLOG 3 -->
+
+        <article class="blog-card">
+
+            <span class="blog-category">
+                Web Development
+            </span>
+
+            <h2>
+                What Is Web Development?
+            </h2>
+
+            <p>
+                A simple beginner-friendly introduction to web
+                development, what it means, how websites are
+                created and the basic skills beginners need.
+            </p>
+
+            <div class="blog-meta">
+
+                <span>
+                    Web Development
+                </span>
+
+                <span>•</span>
+
+                <span>
+                    Beginner
+                </span>
+
+            </div>
+
+            <a
+                href="what-is-web-development.html"
+                class="read-more"
+            >
+                Start Learning →
+            </a>
+
+        </article>
+
+
+    </div>
+
+
+
+    <!-- BLOG NOTE -->
+
+    <div class="blog-note">
+
+        <h3>
+            More Articles Are Coming
+        </h3>
+
+        <p>
+            This blog is growing. More articles about web
+            development, SEO, technology, digital skills,
+            motivation and personal growth will be added
+            over time.
+        </p>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <div class="footer-inner">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                Miracle<span>.</span>
+            </h2>
+
+            <p>
+                The official website and blog of Miracle Emmanuel —
+                sharing knowledge about web development, technology,
+                SEO, digital skills, motivation and personal growth.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="blogs.html">
+                Blog
+            </a>
+
+            <a href="what-is-web-development.html">
+                Web Development
+            </a>
+
+            <a href="about.html">
+                About Me
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Legal
+            </h3>
+
+            <a href="privacy-policy.html">
+                Privacy Policy
+            </a>
+
+            <a href="terms-of-service.html">
+                Terms of Service
+            </a>
+
+            <a href="disclaimer.html">
+                Disclaimer
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Miracle Emmanuel. All rights reserved.
+
+    </div>
+
+</footer>
+
+
+</body>
+
+  </html>
